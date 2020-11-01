@@ -48,8 +48,11 @@
                 </div>
             </div>
         </div>
-        <a id="redirect-login-btn" @if (Auth::check()) href="{{route('logout')}}" @else href="{{route('login')}}" @endif class="redirect-login position-absolute btn btn-warning font-weight-bold">
+        <a id="redirect-login-btn" @if (!Auth::check()) href="{{route('login')}}" @endif class="redirect-login-btn position-absolute btn btn-warning font-weight-bold">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;@if (Auth::check()) Xin chào, {{Auth::user()->username}} @else Đăng nhập @endif
         </a>
+        @if(Auth::check())
+            <a href="{{route('logout')}}" class="logout-btn btn btn-danger position-absolute">Đăng xuất</a>
+        @endif
 </main>
 @endsection

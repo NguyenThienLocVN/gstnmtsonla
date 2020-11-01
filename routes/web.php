@@ -19,6 +19,7 @@ Auth::routes();
 
 // Logout link
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('register', '\App\Http\Controllers\Auth\RegisterController@doRegister');
 
 
 // Tai nguyen nuoc
