@@ -42,7 +42,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color: unset;
 }
 
 /*---------------------------------------------*/
@@ -530,18 +530,37 @@ input.input100 {
 .logout-btn { right: 20px; bottom: 70px; }
 
 .main-navigation {
-  background: lightgreen;
-  height: 50px;
-  line-height: 50px;
+  background: #b5fdb5;
+  height: 40px;
+  line-height: 40px;
 }
-.main-navigation div { 
+.navigation-item { 
   width: 12.5%;
-  transition: 1s;
+  transition: 0.5s;
   cursor: pointer;
 }
-.main-navigation div:hover{
-  background: navajowhite;
+.navigation-item:hover{
+  background: #f1c179;
 }
+.navigation-item:hover .sub-menu {
+  display: block;
+}
+.navigation-item .sub-menu {
+  width: 280px;
+  background: #ffe4bc;
+  display: none;
+  transition: 0.5s;
+}
+.navigation-item .sub-menu div{
+  padding: 0 10px;
+  height: 35px;
+  line-height: 35px;
+}
+.navigation-item .sub-menu div:hover{
+  background: #fdca1359;
+}
+
+
 
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }
