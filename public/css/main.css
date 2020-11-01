@@ -165,7 +165,6 @@ iframe {
 
 
 .wrap-login100, .wrap-register100 {
-  width: 670px;
   background: #fff;
   overflow: hidden;
   position: relative;
@@ -218,6 +217,7 @@ iframe {
 .login100-form img {
   opacity: 0.1;
   height: 150px;
+  top: 20%;
 }
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -478,6 +478,7 @@ input.input100 {
   left: 0;
   line-height: 45px;
   color: gray;
+  width: 20px;
 }
 
 .main-welcome {
@@ -524,8 +525,10 @@ input.input100 {
 .welcome-title h5 { font-size: 14px; }
 .welcome-title h3 { font-size: 19px; }
 
-.container-login100-form-btn, .text-register { line-height: 38px; }
-.redirect-login { right: 20px; bottom: 20px; }
+.container-login100-form-btn, .text-register { line-height: 35px; }
+.redirect-login-btn { right: 20px; bottom: 20px; }
+.logout-btn { right: 20px; bottom: 70px; }
+
 .main-navigation {
   background: lightgreen;
   height: 50px;

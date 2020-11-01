@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Input;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -49,9 +51,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'fullname' => ['required', 'string'],
+            'email' => ['required', 'string', 'email'],
+            'username' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:6'],
+            'phone' => ['required', 'numeric'],
         ]);
     }
 
@@ -64,9 +68,24 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'fullname' => $data['fullname'],
             'email' => $data['email'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+            'organization' => $data['organization'],
         ]);
+    }
+
+    protected function doRegister(){
+        $user = new User;
+        $user->fullname = Input::get('fullname');
+        $user->email = Input::get('email');
+        $user->username = Input::get('username');
+        $user->password = Hash::make(Input::get('password'));
+        $user->phone = Input::get('phone');
+        $user->organization = Input::get('organization');
+        $user->save();
+        return redirect($this->redirectTo)->withSuccess('Đăng ký tài khoản thành công. Vui lòng đăng nhập!');
     }
 }

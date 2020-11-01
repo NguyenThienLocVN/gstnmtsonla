@@ -4,15 +4,17 @@
 	<title>Đăng nhập | Hệ thống cơ sở dữ liệu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/main.css')}}">
 </head>
 <body>
-	
 	<div class="limiter">
-		<div class="container-login100">
+		<div class="container-login100 flex-column">
+			@if(session('success'))
+				<div class="alert alert-success">{{session('success')}}</div>
+			@endif
 			<div class="wrap-login100 rounded">
 				<div class="login100-form-title">
 					<img src="{{ asset('public/images/stnmt.png')}}" alt="so-tai-nguyen-moi-truong" class="w-100">
@@ -22,14 +24,14 @@
 					@csrf
 					<img src="{{ asset('public/images/logo-tnmt.png')}}" alt="logo-tnmt" class="position-absolute">
 					<div class="wrap-input100 position-relative validate-input m-b-26" data-validate="Tên đăng nhập là bắt buộc">
-						<i class="fa fa-user position-absolute" aria-hidden="true"></i>
-						<input id="username" value="{{ old('username') }}" class="input100 px-5" type="text" name="username" placeholder="Tên đăng nhập" required autofocus>
+						<i class="fa fa-user position-absolute px-1" aria-hidden="true"></i>
+						<input id="username" value="{{ old('username') }}" class="input100 pl-4" type="text" name="username" placeholder="Tên đăng nhập" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 position-relative validate-input m-b-18" data-validate = "Mật khẩu là bắt buộc">
-						<i class="fa fa-lock position-absolute" aria-hidden="true"></i>
-						<input id="password" class="input100 px-5" type="password" name="password" placeholder="Mật khẩu">
+						<i class="fa fa-lock position-absolute px-1" aria-hidden="true"></i>
+						<input id="password" class="input100 pl-4" type="password" name="password" placeholder="Mật khẩu">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -50,16 +52,16 @@
 
 					<div class="container-login100-form-btn">
 						<button type="submit" class="btn-success btn mr-2"> ĐĂNG NHẬP </button>
-						hoặc<a class="text-register font-weight-bold" href="register.html">&nbsp;Tạo tài khoản</a>
+						<span>hoặc</span><a class="text-register font-weight-bold" href="{{ route('register') }}">&nbsp;Tạo tài khoản</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></script>
+	<script src="{{ asset('public/js/main.js')}}"></script>
 
 </body>
 </html>
