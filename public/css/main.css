@@ -559,7 +559,7 @@ input.input100 {
 .navigation-item .sub-menu div:hover{
   background: #fdca1359;
 }
-
+.content-left { background: #f5f5f5; }
 
 
 @media screen and (min-width: 768px) {
@@ -573,9 +573,12 @@ input.input100 {
     visibility: visible;
     opacity: 1;
   }
-  .wrap-login100 { width: 30%; }
+  .wrap-login100{ width: 30%; }
   .wrap-register100 { width: 50%; }
   .welcome-menu .menu-item { width: 80%; }
+  .wrap-content { height: calc(100vh - 180px) }
+  .content-left { width: 30%; }
+  .content-right { width: 70%; }
 }
 
 
