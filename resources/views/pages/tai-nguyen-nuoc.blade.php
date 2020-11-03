@@ -1,5 +1,10 @@
+@section('title', 'Hệ thống quản lý, giám sát, khai thác sử dụng tài nguyên nước')
 @extends('layouts.base')
 
+@push('scripts')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+@endpush
 @section('content')
 <main class="main-welcom container-fluid p-0 position-relative">
     <div class="text-center w-100 bg-white">
@@ -72,10 +77,11 @@
                 </div>
             </div>
         </div>
-        <div class="content-right h-100">
-
+        <div class="content-right float-right h-100">
+            <div id="map" class="map h-100"></div>
         </div>
     </div>
 </main>
 
+<script src="{{ asset('public/js/openLayersSonLa.js') }}"></script>
 @endsection

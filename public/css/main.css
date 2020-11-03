@@ -531,8 +531,8 @@ input.input100 {
 
 .main-navigation {
   background: #b5fdb5;
-  height: 40px;
-  line-height: 40px;
+  height: 35px;
+  line-height: 35px;
 }
 .hd-navigation-item {
   width: 11.11%;
@@ -544,7 +544,7 @@ input.input100 {
   transition: 0.5s;
   cursor: pointer;
 }
-.navigation-item:hover{
+.hd-navigation-item:hover, .wr-navigation-item:hover {
   background: #f1c179;
 }
 .navigation-item:hover .sub-menu {

@@ -1,3 +1,4 @@
+@section('title', 'Giám sát Tài nguyên & Môi trường Sơn La')
 @extends('layouts.base')
 
 @section('content')
