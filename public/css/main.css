@@ -546,15 +546,14 @@ input.input100 {
   display: block;
 }
 .navigation-item .sub-menu {
-  width: 280px;
   background: #ffe4bc;
   display: none;
   transition: 0.5s;
 }
 .navigation-item .sub-menu div{
   padding: 0 10px;
-  height: 35px;
   line-height: 35px;
+  border-bottom: 1px solid gray;
 }
 .navigation-item .sub-menu div:hover{
   background: #fdca1359;
@@ -573,6 +572,7 @@ input.input100 {
     visibility: visible;
     opacity: 1;
   }
+  .navigation-item .sub-menu { width: 300px; }
   .wrap-login100{ width: 30%; }
   .wrap-register100 { width: 50%; }
   .welcome-menu .menu-item { width: 80%; }
