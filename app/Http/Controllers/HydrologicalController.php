@@ -15,4 +15,9 @@ class HydrologicalController extends Controller
     {
         return view('pages.khi-tuong-thuy-van');
     }
+
+    public function meteorologyData()
+    {
+        return view('pages.khi-tuong-thuy-van.so-lieu-khi-tuong');
+    }
 }

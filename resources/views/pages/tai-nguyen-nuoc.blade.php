@@ -7,7 +7,7 @@
 @endpush
 @section('content')
 <main class="main-welcom container-fluid p-0 position-relative">
-    <div class="text-center w-100 bg-white">
+    <div class="text-center w-100 bg-light">
         <h6 class="text-primary p-2 font-weight-bold">HỆ THỐNG QUẢN LÝ, GIÁM SÁT, KHAI THÁC SỬ DỤNG TÀI NGUYÊN NƯỚC - TỈNH SƠN LA</h6>
     </div>
     @include('layouts.navigation-water-resource')
@@ -19,17 +19,6 @@
                 </div>
                 <div class="text-center col-12">
                     <b class="text-white">QUAN TRẮC HỒ CHỨA</b>
-                </div>
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="col-4">
-                    <span>Loại hồ:</span>
-                </div>
-                <div class="col-8">
-                    <select class="w-100 select-lake m-1" name="lake-type" id="lake-type">
-                        <option value="">Hồ chứa để phát điện > 2MW</option>
-                        <option value="">Hồ chứa để phát điện < 2MW</option>
-                    </select>
                 </div>
             </div>
             <div class="d-flex align-items-center">

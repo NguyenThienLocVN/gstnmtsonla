@@ -530,7 +530,7 @@ input.input100 {
 .logout-btn { right: 20px; bottom: 70px; }
 
 .main-navigation {
-  background: #b5fdb5;
+  background: #b7eca6;
   height: 35px;
   line-height: 35px;
 }
@@ -543,6 +543,11 @@ input.input100 {
 .navigation-item { 
   transition: 0.5s;
   cursor: pointer;
+}
+.hd-navigation-item a, .wr-navigation-item a
+{
+  display: block;
+  line-height: 35px;
 }
 .hd-navigation-item:hover, .wr-navigation-item:hover {
   background: #f1c179;
@@ -571,6 +576,12 @@ input.input100 {
 .oparate-reservoir h6 { background: #17a2b8; }
 .oparate-reservoir .flat-icon { width: 20px; }
 .oparate-reservoir b {font-size: 25px;}
+.head-intro { border-bottom: 1px solid #6f3c12; }
+.head-intro p { width: fit-content; background: #8c4000; }
+.list-station .row-station { background: #8c4000; }
+.top-title, .main-navigation a { color: #6f3c12; }
+.list-station tbody tr:nth-child(even) { background: #f9f7e6 ; }
+.list-station tbody tr:nth-child(odd) { background: lightgoldenrodyellow; }
 
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }

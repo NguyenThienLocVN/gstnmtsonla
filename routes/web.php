@@ -27,3 +27,4 @@ Route::get('/tai-nguyen-nuoc', 'WaterResourceController@index')->name('tai-nguye
 
 // Khi tuong thuy van
 Route::get('/khi-tuong-thuy-van', 'HydrologicalController@index')->name('khi-tuong-thuy-van');
+Route::get('/khi-tuong-thuy-van/quan-trac/so-lieu-khi-tuong', 'HydrologicalController@meteorologyData')->name('so-lieu-khi-tuong');

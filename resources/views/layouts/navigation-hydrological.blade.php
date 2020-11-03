@@ -1,6 +1,12 @@
 <nav class="main-navigation">
     <div class="hd-navigation-item float-left text-center font-weight-bold"><a href="#">GIỚI THIỆU</a></div>
-    <div class="hd-navigation-item float-left text-center font-weight-bold"><a href="#">QUAN TRẮC</a></div>
+    <div class="hd-navigation-item float-left text-center font-weight-bold"><a href="#">QUAN TRẮC</a>
+        <div class="sub-menu position-absolute text-left">
+            <div><a href="{{ route('so-lieu-khi-tuong') }}">Số liệu khí tượng </a></div>
+            <div><a href="#">Số liệu mưa </a></div>
+            <div><a href="#">Số liệu thủy văn </a></div>
+        </div>
+    </div>
     <div class="hd-navigation-item float-left text-center font-weight-bold"><a href="#">DỰ BÁO</a>
         <div class="sub-menu position-absolute text-left">
             <div><a href="#">Bản tin dự báo thời tiết, thủy văn hàng ngày </a></div>
