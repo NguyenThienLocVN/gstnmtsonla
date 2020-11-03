@@ -24,7 +24,7 @@
                 </div>
                 <div class="menu-item icon-meteor">
                     <div class="item-image"><img src="{{asset('public/images/icon/meteorology-icon.png')}}" alt="meteorology-icon"></div>
-                    <a href="" class="item-text">Khí tượng thủy văn</a>
+                    <a href="{{route('khi-tuong-thuy-van')}}" class="item-text">Khí tượng thủy văn</a>
                 </div>
                 <div class="menu-item">
                     <div class="item-image icon-geo"><img src="{{asset('public/images/icon/geology-icon.png')}}" alt="geology-icon"></div>

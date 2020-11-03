@@ -24,3 +24,6 @@ Route::post('register', '\App\Http\Controllers\Auth\RegisterController@doRegiste
 
 // Tai nguyen nuoc
 Route::get('/tai-nguyen-nuoc', 'WaterResourceController@index')->name('tai-nguyen-nuoc');
+
+// Khi tuong thuy van
+Route::get('/khi-tuong-thuy-van', 'HydrologicalController@index')->name('khi-tuong-thuy-van');

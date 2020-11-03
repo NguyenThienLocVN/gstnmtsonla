@@ -10,4 +10,4 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/css/main.css')}}">
 </head>
 <body class="container">
-    <img src="{{asset('public/images/stnmt.png')}}" alt="so-tnmt" class="w-100" height="100">
+    <a href="{{url('/')}}"><img src="{{asset('public/images/stnmt.png')}}" alt="so-tnmt" class="w-100" height="100"></a>
