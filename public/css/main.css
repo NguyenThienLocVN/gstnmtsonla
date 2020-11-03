@@ -547,21 +547,21 @@ input.input100 {
 .hd-navigation-item:hover, .wr-navigation-item:hover {
   background: #f1c179;
 }
-.navigation-item:hover .sub-menu {
+.hd-navigation-item:hover .sub-menu, .wr-navigation-item:hover .sub-menu {
   display: block;
 }
-.navigation-item .sub-menu {
+.hd-navigation-item .sub-menu, .wr-navigation-item .sub-menu {
   background: #ffe4bc;
   display: none;
   transition: 0.5s;
   z-index: 1;
 }
-.navigation-item .sub-menu div{
+.hd-navigation-item .sub-menu div, .wr-navigation-item .sub-menu div{
   padding: 0 10px;
   line-height: 35px;
   border-bottom: 1px solid gray;
 }
-.navigation-item .sub-menu div:hover{
+.hd-navigation-item .sub-menu div:hover, .wr-navigation-item .sub-menu div:hover{
   background: #fdca1359;
 }
 .content-left { background: #f5f5f5; font-size: 15px; }
