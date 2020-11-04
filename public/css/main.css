@@ -552,6 +552,11 @@ input.input100 {
 .hd-navigation-item:hover, .wr-navigation-item:hover {
   background: #f1c179;
 }
+.hd-navigation-item .sub-menu, .wr-navigation-item .sub-menu {
+  border-left: 1px solid #8c4000;
+  border-right: 1px solid #8c4000;
+  border-top: 1px solid #8c4000;
+}
 .hd-navigation-item:hover .sub-menu, .wr-navigation-item:hover .sub-menu {
   display: block;
 }
@@ -564,7 +569,7 @@ input.input100 {
 .hd-navigation-item .sub-menu div, .wr-navigation-item .sub-menu div{
   padding: 0 10px;
   line-height: 35px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #6f3c12;
 }
 .hd-navigation-item .sub-menu div:hover, .wr-navigation-item .sub-menu div:hover{
   background: #fdca1359;
@@ -577,11 +582,13 @@ input.input100 {
 .operate-reservoir .flat-icon, .warning-reservoir .flat-icon { width: 20px; }
 .warning-reservoir b {font-size: 25px;}
 .head-intro { border-bottom: 1px solid #6f3c12; }
-.head-intro p { width: fit-content; background: #8c4000; }
-.list-station .row-station { background: #8c4000; }
+.head-intro p { width: fit-content; background: #af5e1a; }
+.list-station .row-station { background: #af5e1a; }
 .top-title, .main-navigation a { color: #6f3c12; }
 .list-station tbody tr:nth-child(even) { background: #f9f7e6 ; }
 .list-station tbody tr:nth-child(odd) { background: lightgoldenrodyellow; }
+.list-station td { border: 1px solid lightgray; }
+#layer-select { right: 10px; top: 10px; height: 25px; }
 
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }

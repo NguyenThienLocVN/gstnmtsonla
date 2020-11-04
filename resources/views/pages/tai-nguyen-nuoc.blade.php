@@ -77,8 +77,14 @@
                 </div>
             </div>
         </div>
-        <div class="content-right float-right h-100">
+        <div class="content-right float-right h-100 position-relative">
             <div id="map" class="map h-100"></div>
+            <select id="layer-select" class="position-absolute">
+                <option value="AerialWithLabels" selected>Bản đồ vệ tinh</option>
+                <option value="Road">Bản đồ đường (tĩnh)</option>
+                <option value="RoadOnDemand">Bản đồ đường (động)</option>
+                <option value="CanvasDark">Bản đồ đường (tối)</option>
+            </select>
         </div>
     </div>
 </main>

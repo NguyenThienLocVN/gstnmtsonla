@@ -4,7 +4,7 @@
 	<title>Đăng ký | Hệ thống cơ sở dữ liệu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/main.css')}}">
