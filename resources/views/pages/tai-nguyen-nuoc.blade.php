@@ -21,7 +21,7 @@
                     <b class="text-white">QUAN TRẮC HỒ CHỨA</b>
                 </div>
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center my-2">
                 <div class="col-4">
                     <span>Tên hồ:</span>
                 </div>
@@ -32,15 +32,15 @@
                     </select>
                 </div>
             </div>
-            <div class="info-reservoir mt-4 ml-3">
+            <div class="info-reservoir ml-3">
                 <button class="btn btn-info rounded-0 text-small"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Thông tin hồ chứa</button>
             </div>
             <div class="specification-reservoir mt-2 ml-3">
                 <button class="btn btn-info rounded-0 text-small"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Thông số kỹ thuật</button>
             </div>
-            <div class="oparate-reservoir mt-2 mx-3">
+            <div class="warning-reservoir mt-2 mx-3">
                 <h6 class="text-small p-2 text-white"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Cảnh báo</h6>
-                <div class="d-flex pt-3 py-1 text-center">
+                <div class="d-flex pt-2 text-center">
                     <div class="col-4 px-1">
                         <p class="font-weight-bold"><img class="flat-icon" src="{{ asset('public/images/icon/raining-icon.png') }}" alt="raining-icon">&nbsp;Mưa</p>
                         <p><b class="text-danger">100</b> hồ</p>
@@ -62,6 +62,17 @@
                     <div class="col-4 px-1">
                         <p class="font-weight-bold"><img class="flat-icon" src="{{ asset('public/images/icon/lake-icon.png') }}" alt="raining-icon">&nbsp;MN sông</p>
                         <p><b class="text-danger">2</b> trạm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="operate-reservoir mt-2 mx-3">
+                <h6 class="text-small p-2 text-white"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Vận hành</h6>
+                <div class="d-flex py-2 text-center">
+                    <div class="col-6 px-1">
+                        <p class="font-weight-bold"><img class="flat-icon" src="{{ asset('public/images/icon/image-icon.png') }}" alt="raining-icon">&nbsp;Hình ảnh</p>
+                    </div>
+                    <div class="col-6 px-1">
+                        <p class="font-weight-bold"><img class="flat-icon" src="{{ asset('public/images/icon/webcam-icon.png') }}" alt="raining-icon">&nbsp;Camera</p>
                     </div>
                 </div>
             </div>

@@ -572,10 +572,10 @@ input.input100 {
 .content-left { background: #f5f5f5; font-size: 15px; }
 .content-left button { font-size: 15px; }
 .select-lake { height: 30px; border: 1px solid gray; }
-.oparate-reservoir { border: 1px solid #17a2b8; } 
-.oparate-reservoir h6 { background: #17a2b8; }
-.oparate-reservoir .flat-icon { width: 20px; }
-.oparate-reservoir b {font-size: 25px;}
+.operate-reservoir, .warning-reservoir { border: 1px solid #17a2b8; } 
+.operate-reservoir h6, .warning-reservoir h6 { background: #17a2b8; }
+.operate-reservoir .flat-icon, .warning-reservoir .flat-icon { width: 20px; }
+.warning-reservoir b {font-size: 25px;}
 .head-intro { border-bottom: 1px solid #6f3c12; }
 .head-intro p { width: fit-content; background: #8c4000; }
 .list-station .row-station { background: #8c4000; }
