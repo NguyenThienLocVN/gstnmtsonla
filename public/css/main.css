@@ -244,10 +244,11 @@ iframe {
   font-size: 15px;
   color: #555555;
   line-height: 1.2;
-
   display: block;
   width: 100%;
   background: transparent;
+  border: none;
+  outline: none;
 }
 
 .focus-input100 {
