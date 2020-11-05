@@ -526,16 +526,25 @@ input.input100 {
 .logout-btn { right: 20px; bottom: 70px; }
 .font-13 { font-size: 13px !important; }
 .main-navigation {
-  background: #b7eca6;
-  height: 35px;
-  line-height: 35px;
+  background: #b7eca6 !important;
+  height: 35px !important;
+  line-height: 35px !important;
 }
 .hd-navigation-item {
   width: 11.11%;
+} 
+.nav-height{
+  height: 35px !important;
+  line-height: 35px !important;
+}
+.nav-height a{
+  height: 35px !important;
+  line-height: 35px !important;
 }
 .wr-navigation-item {
-  width: 12.5%;
-}
+  width: 14.11%;
+} 
+
 .navigation-item { 
   transition: 0.5s;
   cursor: pointer;
@@ -570,7 +579,7 @@ input.input100 {
 .hd-navigation-item .sub-menu div:hover, .wr-navigation-item .sub-menu div:hover{
   background: #fdca1359;
 }
-.content-left { background: #f5f5f5; font-size: 15px; }
+.content-left { background: #f5f5f5; font-size: 15px; width: 100%;}
 .content-left button { font-size: 15px; }
 .select-lake { height: 30px; border: 1px solid gray; }
 .operate-reservoir, .warning-reservoir { border: 1px solid #17a2b8; } 
@@ -580,7 +589,7 @@ input.input100 {
 .head-intro { border-bottom: 1px solid #6f3c12; }
 .head-intro p { width: fit-content; background: #af5e1a; }
 .list-station .row-station { background: #af5e1a; }
-.top-title, .main-navigation a { color: #6f3c12; }
+.top-title, .main-navigation a { color: #6f3c12 !important; }
 .list-station tbody tr:hover { background: #f9ec7f !important; }
 .list-station tbody tr:nth-child(even) { background: #f9f7e6 ; }
 .list-station tbody tr:nth-child(odd) { background: lightgoldenrodyellow; }
@@ -636,6 +645,14 @@ input.input100 {
   background-color: rgba(255,255,255,0.8);
   z-index: 2;
 }
+.wr-navigation-item,.hd-navigation-item {
+  width: 100%;
+  background-color: #b7eca6;
+  z-index: 100;
+}
+#layer-select{
+  display: none;
+}
 
 /* Highcharts */
 .highcharts-credits, .highcharts-legend { display: none; }
@@ -659,7 +676,10 @@ input.input100 {
   }
   .modal-body .chart-space { width: 65%; }
   .start-picker, .end-picker { width: 38%; }
+  .content-left{width: 30%;}
+  
 }
+
 
 @media screen and (min-width: 1024px) {
   .alert-validate::before {
@@ -676,6 +696,7 @@ input.input100 {
 
   .modal-dialog { max-width: 900px; }
   .date-max-appear, .date-min-appear { bottom: 14%; }
+  .wr-navigation-item,.hd-navigation-item{text-align: center !important;}
 }
 
 

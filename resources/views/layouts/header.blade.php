@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('public/css/main.css')}}">
     <script src="{{ asset('public/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
     @stack('scripts')
 </head>
 <body class="container">
