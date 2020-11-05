@@ -26,5 +26,11 @@ Route::post('register', '\App\Http\Controllers\Auth\RegisterController@doRegiste
 Route::get('/tai-nguyen-nuoc', 'WaterResourceController@index')->name('tai-nguyen-nuoc');
 
 // Khi tuong thuy van
-Route::get('/khi-tuong-thuy-van', 'HydrologicalController@index')->name('khi-tuong-thuy-van');
-Route::get('/khi-tuong-thuy-van/quan-trac/so-lieu-khi-tuong', 'HydrologicalController@meteorologyData')->name('so-lieu-khi-tuong');
+Route::group([
+    'name' => 'khi-tuong-thuy-van.',
+    'prefix' => 'khi-tuong-thuy-van',
+], function () {
+    Route::get('/', 'HydrologicalController@index')->name('khi-tuong-thuy-van');
+    Route::get('quan-trac/so-lieu-khi-tuong', 'HydrologicalController@meteorologyData')->name('so-lieu-khi-tuong');
+    Route::get('quan-trac/so-lieu-khi-tuong/{id}','HydrologicalController@getMeteorologyData');
+});

@@ -65,10 +65,6 @@ ul, li {
 
 
 /*---------------------------------------------*/
-input {
-	outline: none;
-	border: none;
-}
 
 input[type="number"] {
     -moz-appearance: textfield;
@@ -528,7 +524,7 @@ input.input100 {
 .container-login100-form-btn, .text-register { line-height: 35px; }
 .redirect-login-btn { right: 20px; bottom: 20px; }
 .logout-btn { right: 20px; bottom: 70px; }
-
+.font-13 { font-size: 13px !important; }
 .main-navigation {
   background: #b7eca6;
   height: 35px;
@@ -585,15 +581,84 @@ input.input100 {
 .head-intro p { width: fit-content; background: #af5e1a; }
 .list-station .row-station { background: #af5e1a; }
 .top-title, .main-navigation a { color: #6f3c12; }
+.list-station tbody tr:hover { background: #f9ec7f !important; }
 .list-station tbody tr:nth-child(even) { background: #f9f7e6 ; }
 .list-station tbody tr:nth-child(odd) { background: lightgoldenrodyellow; }
 .list-station td { border: 1px solid lightgray; }
 #layer-select { right: 10px; top: 10px; height: 25px; }
 
+/* Modal */
+.modal-header { background: #d6813a; }
+.modal-body .basic-info { background: #f5e4d0;}
+.modal-body .monitoring-info { background: #dcf3e1;}
+.modal-body .wet-season { background: lightblue;}
+.modal-body .dry-season { background: rgb(230 195 130);}
+.btn-export {
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.ui-datepicker-trigger {
+  border: none;
+  background: #035291;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+}
+.date-range .search-btn {
+  background: #035291;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 10px;
+  color: #fff;
+}
+
+/* Loading gif */
+#loading-gif-image {
+  top: 10%;
+  transform: translateY(-50%);
+  left: 50%;
+  z-index: 9999;
+}
+
+#overlay {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.8);
+  z-index: 2;
+}
+
+/* Highcharts */
+.highcharts-credits, .highcharts-legend { display: none; }
+.highcharts-contextmenu { height: 120px; overflow: auto; }
+.table-date-max-appear tbody tr td:first-child { width: 14%; }
+.table-date-max-appear tbody tr td:nth-child(2),.table-date-max-appear tbody tr td:nth-child(3),
+.table-date-max-appear tbody tr td:nth-child(4),.table-date-max-appear tbody tr td:nth-child(5),
+.table-date-max-appear tbody tr td:nth-child(6),.table-date-max-appear tbody tr td:nth-child(7),
+.table-date-max-appear tbody tr td:nth-child(8),.table-date-max-appear tbody tr td:nth-child(9),
+.table-date-max-appear tbody tr td:nth-child(10),.table-date-max-appear tbody tr td:nth-child(11),
+.table-date-max-appear tbody tr td:nth-child(12) { width: 7.166%; }
+
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }
   .welcome-title h3 { font-size: 22px; }
   .main-welcome {height: calc(100vh - 100px);}
+  .modal-dialog { max-width: 700px; }
+  .modal-body .statistical-space {
+      width: 35%;
+      font-size: 13px;
+  }
+  .modal-body .chart-space { width: 65%; }
+  .start-picker, .end-picker { width: 38%; }
 }
 
 @media screen and (min-width: 1024px) {
@@ -608,6 +673,9 @@ input.input100 {
   .wrap-content { height: calc(100vh - 180px) }
   .content-left { width: 30%; }
   .content-right { width: 70%; }
+
+  .modal-dialog { max-width: 900px; }
+  .date-max-appear, .date-min-appear { bottom: 14%; }
 }
 
 

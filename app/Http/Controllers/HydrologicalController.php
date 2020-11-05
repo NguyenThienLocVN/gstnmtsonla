@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\MeteorologyData;
 
 class HydrologicalController extends Controller
 {
@@ -19,5 +20,10 @@ class HydrologicalController extends Controller
     public function meteorologyData()
     {
         return view('pages.khi-tuong-thuy-van.so-lieu-khi-tuong');
+    }
+
+    public function getMeteorologyData(){
+        $meteorologyData = MeteorologyData::where('Station_ID', 3)->get();
+        return ['meteorologyData' => $meteorologyData];
     }
 }
