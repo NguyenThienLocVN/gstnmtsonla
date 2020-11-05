@@ -12,7 +12,7 @@
         </div>
         <div class="d-flex mt-3 align-items-center justify-content-center flex-column flex-md-row">
             <div class="col-lg-4 col-md-6 d-flex col-12 justify-content-center py-2 py-md-0 order-md-1">
-                <img class="w-50" src="{{asset('public/images/logo-tnmt.png')}}" />
+                <img width="200" height="200" src="{{asset('public/images/logo-tnmt.png')}}" />
             </div>
             <div class="welcome-menu col-md-6 col-lg-4 order-md-2">
                 <div class="menu-item">
