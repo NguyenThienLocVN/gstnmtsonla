@@ -665,6 +665,10 @@ input.input100 {
 .table-date-max-appear tbody tr td:nth-child(10),.table-date-max-appear tbody tr td:nth-child(11),
 .table-date-max-appear tbody tr td:nth-child(12) { width: 7.166%; }
 
+/* Report - Bao cao tai nguyen nuoc */
+.report-item { background: #ffe2c8; }
+.report-item h6 { border-bottom: 1px solid #6f3c12; }
+
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }
   .welcome-title h3 { font-size: 22px; }

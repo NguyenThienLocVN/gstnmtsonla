@@ -45,5 +45,4 @@
         <a href="#" class="nav-link px-2 py-0">ĐĂNG KÝ</a>
     </li>
 </ul>
-  </div> <!-- navbar-collapse.// -->
 </nav>

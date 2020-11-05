@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MeteorologyData;
+use App\Models\Hydrological\MeteorologyData;
 
 class HydrologicalController extends Controller
 {
@@ -14,7 +14,7 @@ class HydrologicalController extends Controller
 
     public function index()
     {
-        return view('pages.khi-tuong-thuy-van');
+        return view('pages.khi-tuong-thuy-van.index');
     }
 
     public function meteorologyData()

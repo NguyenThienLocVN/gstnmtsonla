@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\WaterResource\Reports;
 
 class WaterResourceController extends Controller
 {
@@ -13,6 +14,12 @@ class WaterResourceController extends Controller
 
     public function index()
     {
-        return view('pages.tai-nguyen-nuoc');
+        return view('pages.tai-nguyen-nuoc.index');
+    }
+
+    public function getReports()
+    {
+        $rps = Reports::paginate(8);
+        return view('pages.tai-nguyen-nuoc.bao-cao', ['reports' => $rps]);
     }
 }
