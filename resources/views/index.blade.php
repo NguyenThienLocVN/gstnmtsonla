@@ -3,7 +3,7 @@
 
 @section('content')
 <main class="main-welcome container-fluid pt-2 position-relative">
-    <div class="d-flex flex-column flex-md-row align-items-start">
+    <div class="d-flex justify-content-center flex-column flex-md-row align-items-start">
         
         <div class="col-lg-12 col-md-9 px-0 text-center welcome-title">
             <h5 class="font-weight-bold text-white">SỞ TÀI NGUYÊN MÔI TRƯỜNG TỈNH SƠN LA </h5>
