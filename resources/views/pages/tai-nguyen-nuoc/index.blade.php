@@ -17,7 +17,7 @@
                 <div>
                     <i class="fa fa-home text-white" aria-hidden="true"></i>
                 </div>
-                <div class="text-center col-12">
+                <div class="text-center col-11">
                     <b class="text-white">QUAN TRẮC HỒ CHỨA</b>
                 </div>
             </div>

@@ -39,7 +39,7 @@
         </ul>
     </li>
     <li class="wr-navigation-item nav-item font-weight-bold">
-        <a href="#" class="nav-link px-2 py-0">BÁO CÁO</a>
+        <a href="{{ route('tai-nguyen-nuoc.bao-cao') }}" class="nav-link px-2 py-0">BÁO CÁO</a>
     </li>
     <li class="wr-navigation-item nav-item font-weight-bold">
         <a href="#" class="nav-link px-2 py-0">ĐĂNG KÝ</a>

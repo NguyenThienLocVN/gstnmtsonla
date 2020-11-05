@@ -8,7 +8,7 @@
     <li class="hd-navigation-item nav-item font-weight-bold position-relative">
         <a href="#" class="nav-link px-2 py-0  dropdown-toggle">QUAN TRẮC</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
-            <li class="dropdown-item"><a href="{{ route('so-lieu-khi-tuong') }}">Số liệu khí tượng </a></li>
+            <li class="dropdown-item"><a href="{{ route('khi-tuong-thuy-van.so-lieu-khi-tuong') }}">Số liệu khí tượng </a></li>
             <li class="dropdown-item"><a href="#">Số liệu mưa </a></li>
             <li class="dropdown-item"><a href="#">Số liệu thủy văn </a></li>
         </ul>
@@ -33,7 +33,7 @@
             <li class="dropdown-item"><a href="#">Cấp lại giấy phép hoạt động dự báo, cảnh báo KTTV </a></li>
         </ul>
     </li>
-    <li class="hd-navigation-item nav-item font-weight-bold position-relative"><a href="#" class="nav-link px-2 py-0  dropdown-toggle">BIẾN ĐỔI KHÍ HẬU</a>
+<li class="hd-navigation-item nav-item font-weight-bold position-relative"><a href="#" class="nav-link px-2 py-0  dropdown-toggle">BIẾN ĐỔI KHÍ HẬU</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item"><a href="#">Kết quả đánh giá khí hậu quốc gia</a></li>
             <li class="dropdown-item"><a href="#">Kịch bản biến đổi khí hậu chi tiết cho tỉnh Sơn La</a></li>
@@ -59,3 +59,5 @@
         <a href="#" class="nav-link px-2 py-0">ĐĂNG KÝ</a>
     </li>
 </ul>
+  </div>
+</nav>

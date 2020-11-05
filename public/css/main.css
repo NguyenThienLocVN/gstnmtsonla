@@ -650,9 +650,7 @@ input.input100 {
   background-color: #b7eca6;
   z-index: 100;
 }
-#layer-select{
-  display: none;
-}
+#layer-select { display: none; }
 
 /* Highcharts */
 .highcharts-credits, .highcharts-legend { display: none; }
@@ -681,7 +679,7 @@ input.input100 {
   .modal-body .chart-space { width: 65%; }
   .start-picker, .end-picker { width: 38%; }
   .content-left{width: 30%;}
-  
+  #layer-select { display: block; }
 }
 
 
