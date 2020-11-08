@@ -10,9 +10,9 @@
 	    <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa thủy điện trên 2MW </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa thủy điện dưới 2MW </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa khai thác nước mặt sản xuất nông nghiệp </a></li>
+            <li class="dropdown-item py-1 px-2"><a href="#">Hồ thủy lợi </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Trạm bơm </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="#">Công trình khai thác, sử dụng nước dưới đất </a></li>
+            <li class="dropdown-item py-1 px-2"><a href="#">Công trình khai thác, sử dụng NDĐ </a></li>
 	    </ul>
 	</li>
     <li class="wr-navigation-item nav-item font-weight-bold position-relative">
