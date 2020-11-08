@@ -23,10 +23,6 @@
                     <div class="item-image icon-water"><img src="{{asset('public/images/icon/water-icon.png')}}" alt="water-icon"></div>
                     <a href="{{route('tai-nguyen-nuoc')}}" class="item-text">Tài nguyên nước</a>
                 </div>
-                <div class="menu-item icon-meteor">
-                    <div class="item-image"><img src="{{asset('public/images/icon/meteorology-icon.png')}}" alt="meteorology-icon"></div>
-                    <a href="{{route('khi-tuong-thuy-van')}}" class="item-text">Khí tượng thủy văn</a>
-                </div>
                 <div class="menu-item">
                     <div class="item-image icon-geo"><img src="{{asset('public/images/icon/geology-icon.png')}}" alt="geology-icon"></div>
                     <a href="" class="item-text">Địa chất khoáng sản</a>
@@ -34,6 +30,10 @@
                 <div class="menu-item">
                     <div class="item-image icon-env"><img src="{{asset('public/images/icon/env-icon.png')}}" alt="env-icon"></div>
                     <a href="" class="item-text">Môi trường</a>
+                </div>
+                <div class="menu-item icon-meteor">
+                    <div class="item-image"><img src="{{asset('public/images/icon/meteorology-icon.png')}}" alt="meteorology-icon"></div>
+                    <a href="{{route('khi-tuong-thuy-van')}}" class="item-text">Khí tượng thủy văn</a>
                 </div>
                 <div class="menu-item">
                     <div class="item-image icon-map"><img src="{{asset('public/images/icon/map-icon.png')}}" alt="map-icon"></div>

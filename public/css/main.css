@@ -526,6 +526,8 @@ input.input100 {
 .redirect-login-btn { right: 20px; bottom: 20px; }
 .logout-btn { right: 20px; bottom: 70px; }
 .font-13 { font-size: 13px !important; }
+.font-15 { font-size: 15px !important; }
+.font-17 { font-size: 17px !important; }
 .main-navigation {
   background: #b7eca6 !important;
   height: 35px !important;
@@ -538,9 +540,12 @@ input.input100 {
   height: 35px !important;
   line-height: 35px !important;
 }
-.nav-height a{
+.nav-height a, .account-header{
   height: 35px !important;
   line-height: 35px !important;
+}
+.account-header:hover {
+  background: lightgray;
 }
 .wr-navigation-item {
   width: 14.11%;
