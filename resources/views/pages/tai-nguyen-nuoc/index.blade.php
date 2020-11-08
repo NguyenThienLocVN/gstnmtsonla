@@ -13,7 +13,7 @@
     </div>
     @include('layouts.navigation-water-resource')
     <div class="wrap-content w-100">
-        <div class="content-left float-left h-100">
+        <div class="content-left float-left">
             <div class="d-flex p-2 bg-primary ">
                 <div>
                     <i class="fa fa-home text-white" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="operate-reservoir mt-2 mx-3">
+            <div class="operate-reservoir my-2 mx-3">
                 <h6 class="text-small p-2 text-white"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Vận hành</h6>
                 <div class="d-flex py-2 text-center">
                     <div class="col-6 px-1">

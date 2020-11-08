@@ -532,6 +532,7 @@ input.input100 {
   background: #b7eca6 !important;
   height: 35px !important;
   line-height: 35px !important;
+  clear: both;
 }
 .hd-navigation-item {
   width: 11.11%;
@@ -585,6 +586,8 @@ input.input100 {
 .hd-navigation-item .sub-menu div:hover, .wr-navigation-item .sub-menu div:hover{
   background: #fdca1359;
 }
+.wrap-content { height: calc(100vh - 150px); }
+.content-right { width: 100%; padding: 1rem; }
 .content-left { background: #f5f5f5; font-size: 15px; width: 100%;}
 .content-left button { font-size: 15px; }
 .select-lake { height: 30px; border: 1px solid gray; }
@@ -684,7 +687,9 @@ input.input100 {
   }
   .modal-body .chart-space { width: 65%; }
   .start-picker, .end-picker { width: 38%; }
+  .wrap-content { height: calc(100vh - 205px); }
   .content-left{width: 30%;}
+  .content-right { width: 70%; padding: 0; }
   #layer-select { display: block; }
 }
 
