@@ -16,10 +16,10 @@
         <div class="content-left float-left">
             <div class="d-flex p-2 bg-primary ">
                 <div>
-                    <i class="fa fa-home text-white" aria-hidden="true"></i>
+                    <a href="{{ route('index') }}"><i class="fa fa-home text-white" aria-hidden="true"></i></a>
                 </div>
                 <div class="text-center col-11">
-                    <b class="text-white">QUAN TRẮC HỒ CHỨA</b>
+                    <b class="text-white">GIÁM SÁT, KHAI THÁC SỬ DỤNG NƯỚC</b>
                 </div>
             </div>
             <div class="d-flex align-items-center my-2">
