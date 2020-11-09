@@ -601,7 +601,7 @@ input.input100 {
 .list-station tbody tr:nth-child(even) { background: #f9f7e6 ; }
 .list-station tbody tr:nth-child(odd) { background: lightgoldenrodyellow; }
 .list-station td { border: 1px solid lightgray; }
-#layer-select { right: 10px; top: 10px; height: 25px; }
+#layer-select { right: 10px; top: 10px; height: 25px; z-index: 999; }
 
 /* Modal */
 .modal-header { background: #d6813a; }
@@ -656,6 +656,7 @@ input.input100 {
   width: 100%;
   background-color: #b7eca6;
   z-index: 100;
+  z-index: 9999;
 }
 #layer-select { display: none; }
 
@@ -678,6 +679,7 @@ input.input100 {
 .footer-content { bottom: 30px; }
 
 @media screen and (min-width: 768px) {
+  .container { max-width: 100% !important; }
   .wrap-login100 { width: 60%; }
   .welcome-title h3 { font-size: 22px; }
   .main-welcome {height: 100vh;}
@@ -696,6 +698,7 @@ input.input100 {
 
 
 @media screen and (min-width: 1024px) {
+  .container { max-width: 1140px !important; }
   .alert-validate::before {
     visibility: visible;
     opacity: 1;

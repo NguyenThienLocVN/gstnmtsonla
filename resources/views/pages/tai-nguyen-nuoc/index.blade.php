@@ -2,8 +2,9 @@
 @extends('layouts.base')
 
 @push('scripts')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+   <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js" integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ==" crossorigin=""></script>
 @endpush
 @section('content')
 <main class="main-welcom container-fluid p-0 position-relative">
@@ -81,14 +82,15 @@
         <div class="content-right float-right h-100 position-relative">
             <div id="map" class="map h-100"></div>
             <select id="layer-select" class="position-absolute">
-                <option value="AerialWithLabels" selected>Bản đồ vệ tinh</option>
-                <option value="Road">Bản đồ đường (tĩnh)</option>
-                <option value="RoadOnDemand">Bản đồ đường (động)</option>
-                <option value="CanvasDark">Bản đồ đường (tối)</option>
+                <option value="Imagery">Bản đồ vệ tinh</option>
+                <option value="Topographic">Bản đồ địa hình</option>
+                <option value="Streets">Bản đồ đường</option>
+                <option value="NationalGeographic">Bản đồ địa lý</option>
+                <option value="ImageryClarity">Bản đồ vệ tinh 2</option>
             </select>
         </div>
     </div>
 </main>
 
-<script src="{{ asset('public/js/openLayersSonLa.js') }}"></script>
+<script src="{{ asset('public/js/configMap.js') }}"></script>
 @endsection
