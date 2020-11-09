@@ -49,10 +49,10 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-column flex-md-row mt-5 footer-content">
-            <div class="info-contact text-white col-sm-12 col-md-8 col-lg-9 order-2 order-md-1 py-3 ">
+        <div class="d-flex flex-column flex-md-row footer-content">
+            <div class="info-contact text-white col-sm-12 col-md-8 col-lg-9 order-2 order-md-1 py-1">
                 <p class="text-white font-italic">Mọi thông tin xin vui lòng liên hệ :</p>
-                <div class="item d-flex mt-2">
+                <div class="item d-flex mt-1">
                     <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>
                     <span>Sở Tài nguyên và Môi trường tỉnh Sơn La </span>
                 </div>
@@ -65,7 +65,7 @@
                     <span>stnmt@sonla.gov.vn</span>
                 </div>
             </div>
-            <div class="button-user col-sm-12 col-md-4 col-lg-3 order-1 py-3 ">
+            <div class="button-user col-sm-12 col-md-4 col-lg-3 order-1 pb-3">
                 <a id="redirect-login-btn" @if (!Auth::check()) href="{{route('login')}}" @endif class="d-block my-2 redirect-login-btn btn btn-warning font-weight-bold">
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;@if (Auth::check()) Xin chào, {{Auth::user()->username}} @else Đăng nhập @endif
                 </a>

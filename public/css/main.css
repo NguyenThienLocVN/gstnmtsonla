@@ -680,7 +680,7 @@ input.input100 {
 @media screen and (min-width: 768px) {
   .wrap-login100 { width: 60%; }
   .welcome-title h3 { font-size: 22px; }
-  .main-welcome {height: calc(100vh - 100px);}
+  .main-welcome {height: 100vh;}
   .modal-dialog { max-width: 700px; }
   .modal-body .statistical-space {
       width: 35%;
