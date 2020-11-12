@@ -221,7 +221,7 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 1px solid #b2b2b2;
+  border: 1px solid #b2b2b2;
 }
 
 .label-input100 {
@@ -472,7 +472,7 @@ input.input100 {
 }
 
 .wrap-input100 .fa {
-  left: 0;
+  left: 2px;
   line-height: 35px;
   color: gray;
   width: 20px;
@@ -681,8 +681,10 @@ input.input100 {
 .input-filter { outline: none; border: 1px solid darkgray; }
 .input-filter:focus { box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
 
-.dropdownlist-office { border: 1px solid lightgray; height: 80px; overflow: auto; }
+.dropdownlist-office { border: 1px solid lightgray; height: 80px; overflow: auto; z-index: 2; }
 .dropdownlist-office li:hover { background: #e0e0e0; cursor: pointer; }
+#btn-select-dropdown-office { background: lightgray; }
+#btn-select-dropdown-office:hover { background: #c7c7c7 !important; }
 
 /* Table construction result */
 .construction-result thead { background: #f5e88e; line-height: 30px; border: 1px solid lightgray; }

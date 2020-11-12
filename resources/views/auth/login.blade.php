@@ -23,10 +23,18 @@
 				<form class="login100-form p-5 text-center justify-content-center validate-form position-relative" method="POST" action="{{ route('login') }}">
 					@csrf
 					<img src="{{ asset('public/images/logo-tnmt.png')}}" alt="logo-tnmt" class="position-absolute">
-					<div class="wrap-input100 position-relative validate-input m-b-26" data-validate="Tên đăng nhập là bắt buộc">
-						<i class="fa fa-user position-absolute px-1" aria-hidden="true"></i>
-						<input id="username" value="{{ old('username') }}" class="input100 pl-4" type="text" name="username" placeholder="Tên đăng nhập" required>
-						<span class="focus-input100"></span>
+					<div class="position-relative wrap-input100 mb-3">
+						<div class="position-relative validate-input d-flex" data-validate="Tên đăng nhập là bắt buộc">
+							<i class="fa fa-user position-absolute px-1" aria-hidden="true"></i>
+							<input id="username" value="{{ old('username') }}" class="input100 pl-4" type="text" name="username" placeholder="Tên đăng nhập" required>
+							<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white bg-light text-dark text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+						</div>
+						<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
+							<li class="p-1">Chủ tịch UBND Tỉnh</li>
+							<li class="p-1">Phó Chủ tịch UBND Tỉnh</li>
+							<li class="p-1">Chủ tịch UBND Huyện Mộc Châu</li>
+							<li class="p-1">Phó Chủ tịch UBND Huyện Mộc Châu</li>
+						</ul>
 					</div>
 
 					<div class="wrap-input100 position-relative validate-input m-b-18" data-validate = "Mật khẩu là bắt buộc">
@@ -37,7 +45,7 @@
 
 					@if ($errors->any())
                         @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger small">{{$error}}</div>
+                            <div class="alert alert-danger small px-2">{{$error}}</div>
                         @endforeach
                     @endif
 

@@ -65,6 +65,9 @@
     }
     
     // Dropdown select office
+    $('#btn-select-dropdown-office').on('click', function(){
+        $('#dropdownlist-office').slideToggle();
+    })
     $("#filter-office").on('focus',function(){
         $('#dropdownlist-office').show();
     })

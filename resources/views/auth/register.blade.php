@@ -55,7 +55,7 @@
 						<div class="col-sm-12 col-md-5 p-0 position-relative validate-input m-b-26" data-validate="Cơ quan / Đơn vị">
 							<div class="d-flex">
 								<input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="office" id="filter-office" placeholder="Cơ quan / Tổ chức">
-								<span class="btn-select-dropdown text-white bg-primary text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+								<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
 							</div>
 							<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
 								<li class="p-1">Chủ tịch UBND Tỉnh</li>
