@@ -75,4 +75,10 @@
         $('#filter-office').val(this.innerText);
         $('#dropdownlist-office').hide();
     })
+
+    $(".office_id").on('click',function(){
+        var value = $(this).attr('id');
+        console.log(value);
+        $("#office_id").val(value);
+    })
 })(jQuery);

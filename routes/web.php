@@ -19,6 +19,7 @@ Auth::routes();
 
 // Logout link
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('register', '\App\Http\Controllers\Auth\RegisterController@showRegister')->name('register');
 Route::post('register', '\App\Http\Controllers\Auth\RegisterController@doRegister');
 
 

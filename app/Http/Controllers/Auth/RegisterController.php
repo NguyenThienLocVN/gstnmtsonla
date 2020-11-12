@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Input;
 use Auth;
+use App\Offices;
 
 class RegisterController extends Controller
 {
@@ -76,7 +77,10 @@ class RegisterController extends Controller
             'organization' => $data['organization'],
         ]);
     }
-
+    public function showRegister(){
+        $offices = Offices::all();
+        return view('auth.register',['offices'=>$offices]);
+    }
     protected function doRegister(){
         $user = new User;
         $user->fullname = Input::get('fullname');
@@ -84,7 +88,9 @@ class RegisterController extends Controller
         $user->username = Input::get('username');
         $user->password = Hash::make(Input::get('password'));
         $user->phone = Input::get('phone');
-        $user->organization = Input::get('organization');
+        $user->office_id = Input::get('office_id');
+        $user->role_id = "1";
+        $user->status = "0";
         $user->save();
         return redirect($this->redirectTo)->withSuccess('Đăng ký tài khoản thành công. Vui lòng đăng nhập!');
     }
