@@ -719,7 +719,7 @@ input.input100 {
 
 
 @media screen and (min-width: 1024px) {
-  .container { max-width: 1140px !important; }
+  .main-welcome {height: unset;}
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
