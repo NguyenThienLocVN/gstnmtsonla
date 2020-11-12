@@ -29,6 +29,9 @@ Route::group([
 ], function () {
     Route::get('/', 'WaterResourceController@index')->name('tai-nguyen-nuoc');
 
+    // Giam sat
+    Route::get('/giam-sat/ho-thuy-dien-tren-2mw', 'WaterResourceController@hydropowerReservoirGreaterThan2MW')->name('ho-thuy-dien-tren-2mw');
+
     // Bao cao
     Route::get('/bao-cao', 'WaterResourceController@getReports')->name('tai-nguyen-nuoc.bao-cao');
 });

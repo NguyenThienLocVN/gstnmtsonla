@@ -53,13 +53,16 @@
 							<span class="focus-input100"></span>
 						</div>
 						<div class="col-sm-12 col-md-5 p-0 position-relative validate-input m-b-26" data-validate="Cơ quan / Đơn vị">
-							<select class="w-100" name="organization" required id="organization">
-								<option value="">Chọn cơ quan</option>
-								<option value="STNMTSL">Sở Tài nguyên Môi trường Tỉnh</option>
-								<option value="CTA">Công ty A</option>
-								<option value="UBND">Ủy ban nhân dân</option>
-							</select>
-							<span class="focus-input100"></span>
+							<div class="d-flex">
+								<input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="office" id="filter-office" placeholder="Cơ quan / Tổ chức">
+								<span class="btn-select-dropdown text-white bg-primary text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+							</div>
+							<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
+								<li class="p-1">Chủ tịch UBND Tỉnh</li>
+								<li class="p-1">Phó Chủ tịch UBND Tỉnh</li>
+								<li class="p-1">Chủ tịch UBND Huyện Mộc Châu</li>
+								<li class="p-1">Phó Chủ tịch UBND Huyện Mộc Châu</li>
+							</ul>
 						</div>
 					</div>
                     @if ($errors->any())
@@ -79,7 +82,7 @@
 	
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></script>
-	<script src="{{ asset('public/js/main.js')}}"></script>
+	<script src="{{ asset('public/js/auth.js')}}"></script>
 
 </body>
 </html>

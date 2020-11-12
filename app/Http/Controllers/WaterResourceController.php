@@ -17,6 +17,11 @@ class WaterResourceController extends Controller
         return view('pages.tai-nguyen-nuoc.index');
     }
 
+    public function hydropowerReservoirGreaterThan2MW()
+    {
+        return view('pages.tai-nguyen-nuoc.giam-sat.ho-thuy-dien-tren-2mw');
+    }
+
     public function getReports()
     {
         $rps = Reports::paginate(8);

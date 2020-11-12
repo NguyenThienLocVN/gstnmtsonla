@@ -8,7 +8,7 @@
     <li class="wr-navigation-item nav-item font-weight-bold dropdown position-relative">
 	    <a class="nav-link px-2 py-0 dropdown-toggle" href="#" data-toggle="dropdown">  GIÁM SÁT  </a>
 	    <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
-            <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa thủy điện trên 2MW </a></li>
+            <li class="dropdown-item py-1 px-2"><a href="{{ route('ho-thuy-dien-tren-2mw') }}">Hồ chứa thủy điện trên 2MW </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa thủy điện dưới 2MW </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Hồ thủy lợi </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Trạm bơm </a></li>

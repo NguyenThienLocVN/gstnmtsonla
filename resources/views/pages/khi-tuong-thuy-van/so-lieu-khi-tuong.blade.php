@@ -20,7 +20,7 @@
     <div class="text-center w-100 bg-light">
         <h6 class="p-2 font-weight-bold top-title">HỆ THỐNG QUẢN LÝ, LƯU TRỮ THÔNG TIN, DỮ LIỆU KHÍ TƯỢNG THỦY VĂN</h6>
     </div>
-    @include('layouts.navigation-hydrological')
+    @include('layouts.navigation-thuy-van')
     <div class="wrap-content w-100 meteorology-data">
         <div class="w-100 head-intro">
             <p class="px-2 py-1 mt-2 font-weight-bold text-white">Số liệu khí tượng</p>
