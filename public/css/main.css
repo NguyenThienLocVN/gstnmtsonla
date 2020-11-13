@@ -701,16 +701,19 @@ input.input100 {
 ::-webkit-scrollbar-thumb { background: gray;  border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: darkgray;  }
 
+/* bang quan ly nguoi dung */
+.w-table{width: 95%; margin: 0 auto;}
+.bg-page{background: rgb(196, 211, 246);}
+.header-table{color: rgb(255, 255, 255);background: rgb(108, 122, 224);}
+.font-weight-300{font-weight: 300;}
+/* end table */
 @media screen and (min-width: 768px) {
   .container { max-width: 100% !important; }
   .wrap-login100 { width: 60%; }
   .welcome-title h3 { font-size: 22px; }
   .main-welcome {height: 100vh;}
   .modal-dialog { max-width: 700px; }
-  .modal-body .statistical-space {
-      width: 35%;
-      font-size: 13px;
-  }
+  .modal-body .statistical-space {width: 35%;font-size: 13px;}
   .modal-body .chart-space { width: 65%; }
   .start-picker, .end-picker { width: 38%; }
   .wrap-content { height: calc(100vh - 205px); }
@@ -730,7 +733,7 @@ input.input100 {
   .wrap-login100{ width: 30%; }
   .wrap-register100 { width: 50%; }
   .welcome-menu .menu-item { width: 80%; }
-  .wrap-content { height: calc(100vh - 180px) }
+  .wrap-content { height: calc(100vh - 170px) }
   .content-left { width: 30%; }
   .content-right { width: 70%; }
 

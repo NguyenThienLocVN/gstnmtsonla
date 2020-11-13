@@ -30,10 +30,9 @@
 							<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white bg-light text-dark text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
 						</div>
 						<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
-							<li class="p-1">Chủ tịch UBND Tỉnh</li>
-							<li class="p-1">Phó Chủ tịch UBND Tỉnh</li>
-							<li class="p-1">Chủ tịch UBND Huyện Mộc Châu</li>
-							<li class="p-1">Phó Chủ tịch UBND Huyện Mộc Châu</li>
+							@foreach($offices as $office)
+								<li class="p-1" id="{{$office->id}}">{{$office->office_name}}</li>
+							@endforeach
 						</ul>
 					</div>
 

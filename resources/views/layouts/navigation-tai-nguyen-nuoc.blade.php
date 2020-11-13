@@ -45,7 +45,7 @@
         <a href="#" class="nav-link px-2 py-0 dropdown-toggle">NGƯỜI DÙNG</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Thông tin tài khoản </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="#">Quản lý người dùng </a></li>
+            <li class="dropdown-item py-1 px-2"><a href="{{ url('tai-nguyen-nuoc/nguoi-dung/quan-ly-nguoi-dung') }}">Quản lý người dùng </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Nhật ký sử dụng </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Đăng xuất  </a></li>
         </ul>

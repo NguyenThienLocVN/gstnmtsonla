@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// login
+Route::get('login', '\App\Http\Controllers\Auth\LoginController@showLogin')->name('login');
 // Logout link
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('register', '\App\Http\Controllers\Auth\RegisterController@showRegister')->name('register');
@@ -35,6 +37,9 @@ Route::group([
 
     // Bao cao
     Route::get('/bao-cao', 'WaterResourceController@getReports')->name('tai-nguyen-nuoc.bao-cao');
+
+    // Quan ly nguoi dung
+    Route::get('nguoi-dung/quan-ly-nguoi-dung', 'UsersController@quanLy')->name('quan-ly-nguoi-dung');
 });
 
 // Khi tuong thuy van

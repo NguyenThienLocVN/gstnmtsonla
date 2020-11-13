@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Offices extends Model
+class Roles extends Model
 {
-    public $table = 'offices';
+    public $table = 'roles';
 }
-

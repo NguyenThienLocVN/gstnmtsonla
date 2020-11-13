@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
     protected $rememberTokenName = false;
-    
     function getAuthPassWord()
     {
         return $this->password;
