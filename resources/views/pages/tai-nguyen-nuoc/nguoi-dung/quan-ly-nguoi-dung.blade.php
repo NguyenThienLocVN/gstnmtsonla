@@ -2,7 +2,7 @@
 @extends('layouts.base')
 
 @section('content')
-<main class="main-welcom container-fluid p-0 position-relative">
+<main class="main-welcom p-0 position-relative">
     <div class="text-center w-100 bg-light">
         <h6 class="d-inline-block text-primary p-2 font-weight-bold">HỆ THỐNG QUẢN LÝ, GIÁM SÁT, KHAI THÁC SỬ DỤNG TÀI NGUYÊN NƯỚC - TỈNH SƠN LA</h6>
         <span class="account-header d-inline-block px-2 float-right font-13"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
@@ -25,9 +25,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 1; ?>
                     @foreach($users as $user)
                         <tr class="text-left text-secondary ">
-                            <td class="p-2 text-center">{{$user->id}}</td>
+                            <td class="p-2 text-center">{{$i}}</td>
                             <td class="p-2 text-left">{{$user->fullname}}</td>
                             <td class="p-2 text-left">{{$user->username}}</td>
                             <td class="p-2 text-left">{{$user->email}}</td>
@@ -36,12 +37,12 @@
                             <td class="p-2 text-left">{{$user->role_name}}</td>
                             <td class="p-2 text-center"><?= ($user->status == 1) ? "Đã duyệt" : "Chưa duyệt" ?> &nbsp; <?= ($user->status == 1) ? "" : "<span class='btn btn-sm btn-danger float-right mr-1'>Duyệt</span>" ?></td>
                         </tr>
+                        <?php $i++ ?>
                     @endforeach
                     <tr class="border-0 p-0">
                         <th colspan="9" class="p-0"> <div class="tf rounded-bottom"></div></th>
                     </tr>
                 </tbody>
-              
             </table>
         </div>
     </div>

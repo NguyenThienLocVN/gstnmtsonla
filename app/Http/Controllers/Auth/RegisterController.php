@@ -78,7 +78,7 @@ class RegisterController extends Controller
         ]);
     }
     public function showRegister(){
-        $offices = Offices::all();
+        $offices = Offices::where('can_register', 1)->get();
         return view('auth.register',['offices'=>$offices]);
     }
     protected function doRegister(){

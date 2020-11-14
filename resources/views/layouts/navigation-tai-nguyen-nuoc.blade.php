@@ -45,9 +45,11 @@
         <a href="#" class="nav-link px-2 py-0 font-13 dropdown-toggle">NGƯỜI DÙNG</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Thông tin tài khoản </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="{{ url('tai-nguyen-nuoc/nguoi-dung/quan-ly-nguoi-dung') }}">Quản lý người dùng </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="#">Nhật ký sử dụng </a></li>
-            <li class="dropdown-item py-1 px-2"><a href="#">Đăng xuất  </a></li>
+            @if(Auth::user()->role_id == 1)
+                <li class="dropdown-item py-1 px-2"><a href="{{ url('tai-nguyen-nuoc/nguoi-dung/quan-ly-nguoi-dung') }}">Quản lý người dùng </a></li>
+                <li class="dropdown-item py-1 px-2"><a href="#">Nhật ký sử dụng </a></li>
+            @endif
+            <li class="dropdown-item py-1 px-2"><a href="{{ route('logout') }}">Đăng xuất  </a></li>
         </ul>
     </li>
 </ul>

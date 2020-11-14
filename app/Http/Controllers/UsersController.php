@@ -19,8 +19,10 @@ class UsersController extends Controller
     {
         $u = Users::all();
         $users = DB::table('users')->join("offices","offices.id","=","users.office_id")
-        ->join("roles","roles.id","=","users.role_id")->get();
-
+        ->join("roles","roles.id","=","users.role_id")
+        ->select('users.*', 'offices.*', 'roles.*', 'users.id as userID' )
+        ->get();
+        
         return view('pages.tai-nguyen-nuoc.nguoi-dung.quan-ly-nguoi-dung',["users"=>$users]);
         
     }

@@ -63,8 +63,8 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
-    // Dropdown select office
+
+    // Dropdown select office when register
     $('#btn-select-dropdown-office').on('click', function(){
         $('#dropdownlist-office').slideToggle();
     })
@@ -74,11 +74,8 @@
     $('#dropdownlist-office li').on('click',function(){
         $('#filter-office').val(this.innerText);
         $('#dropdownlist-office').hide();
-    })
-
-    $(".office_id").on('click',function(){
-        var value = $(this).attr('id');
-        console.log(value);
-        $("#office_id").val(value);
+        var id = $(this).attr('id');
+        $("#office_id").val(id);
+        $('#username').val(id);
     })
 })(jQuery);

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Offices;
+use DB;
 
 class LoginController extends Controller
 {
@@ -41,7 +42,7 @@ class LoginController extends Controller
     }
     public function showLogin()
     {
-        $offices = Offices::all();
+        $offices = DB::table('offices')->join('users', 'users.office_id', '=', 'offices.id')->get();
         return view('auth.login',['offices'=>$offices]);
     }
     public function login(Request $request)

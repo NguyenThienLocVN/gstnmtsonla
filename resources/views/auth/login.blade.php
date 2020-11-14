@@ -31,7 +31,7 @@
 						</div>
 						<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
 							@foreach($offices as $office)
-								<li class="p-1" id="{{$office->id}}">{{$office->office_name}}</li>
+								<li class="p-1" id="{{$office->username}}">{{$office->office_name}}</li>
 							@endforeach
 						</ul>
 					</div>

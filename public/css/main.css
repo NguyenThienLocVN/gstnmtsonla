@@ -515,7 +515,7 @@ input.input100 {
 
 .welcome-menu .menu-item .item-text {
   line-height: 48px;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -704,7 +704,7 @@ input.input100 {
 
 /* Manage user */
 .w-table{width: 95%; margin: 0 auto;}
-.bg-page{background: rgb(196, 211, 246);}
+.bg-page{background: rgb(196, 211, 246); height: fit-content !important;}
 .header-table{color: rgb(255, 255, 255);background: rgb(108, 122, 224);}
 .font-weight-300{font-weight: 300;}
 
@@ -730,7 +730,7 @@ input.input100 {
 
 @media screen and (min-width: 1024px) {
   .container-fluid { width: 90% !important; }
-  .main-welcome {height: unset;}
+  .main-welcome {height: unset !important;}
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
@@ -754,4 +754,6 @@ input.input100 {
 }
 
 
-
+@media screen and (min-width: 1400px) {
+  .main-welcome {height: calc(100vh - 100px) !important;}
+}
