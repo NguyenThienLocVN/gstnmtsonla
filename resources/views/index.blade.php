@@ -2,7 +2,7 @@
 @extends('layouts.base')
 
 @section('content')
-<main class="main-welcome container-fluid pt-2 position-relative">
+<main class="main-welcome pt-2 position-relative">
     <div class="d-flex justify-content-center flex-column flex-md-row align-items-start">
         
         <div class="col-lg-12 col-md-9 px-0 text-center welcome-title">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="d-flex flex-column flex-md-row footer-content">
-            <div class="info-contact text-white col-sm-12 col-md-8 col-lg-10 order-2 order-md-1 py-1">
+            <div class="info-contact text-white col-sm-12 col-md-8 col-lg-10 order-2 order-md-1 py-1 px-0">
                 <p class="text-white font-italic">Mọi thông tin xin vui lòng liên hệ :</p>
                 <div class="item d-flex mt-1">
                     <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>
@@ -65,7 +65,7 @@
                     <span>stnmt@sonla.gov.vn</span>
                 </div>
             </div>
-            <div class="button-user col-sm-12 col-md-4 col-lg-2 order-1 pb-3 px-0">
+            <div class="button-user col-sm-12 col-md-4 col-lg-2 order-1 pb-3 px-2">
                 <a id="redirect-login-btn" @if (!Auth::check()) href="{{route('login')}}" @endif class="d-block my-2 redirect-login-btn btn btn-warning font-weight-bold">
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;@if (Auth::check()) Xin chào, {{Auth::user()->username}} @else Đăng nhập @endif
                 </a>

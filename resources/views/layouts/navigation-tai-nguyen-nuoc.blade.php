@@ -4,9 +4,9 @@
   </button>
   <div class="collapse navbar-collapse" id="main_nav">
 <ul class="navbar-nav justify-content-between w-100">
-	<li class="wr-navigation-item nav-item font-weight-bold active"> <a class="nav-link px-2 py-0" href="#">GIỚI THIỆU </a> </li>
+	<li class="wr-navigation-item nav-item font-weight-bold active"> <a class="nav-link px-2 py-0 font-13" href="#">GIỚI THIỆU </a> </li>
     <li class="wr-navigation-item nav-item font-weight-bold dropdown position-relative">
-	    <a class="nav-link px-2 py-0 dropdown-toggle" href="#" data-toggle="dropdown">  GIÁM SÁT  </a>
+	    <a class="nav-link px-2 py-0 font-13 dropdown-toggle" href="#" data-toggle="dropdown">  GIÁM SÁT  </a>
 	    <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="{{ route('ho-thuy-dien-tren-2mw') }}">Hồ chứa thủy điện trên 2MW </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Hồ chứa thủy điện dưới 2MW </a></li>
@@ -16,14 +16,14 @@
 	    </ul>
 	</li>
     <li class="wr-navigation-item nav-item font-weight-bold position-relative">
-        <a class="nav-link px-2 py-0 dropdown-toggle" href="#" data-toggle="dropdown">CẤP PHÉP</a>
+        <a class="nav-link px-2 py-0 font-13 dropdown-toggle" href="#" data-toggle="dropdown">CẤP PHÉP</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">QLCP khai thác sử dụng nước mặt </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">QLCP khai thác sử dụng nước dưới đất </a></li>
         </ul>
     </li>
 	<li class="wr-navigation-item nav-item font-weight-bold position-relative">
-        <a href="#" class="nav-link px-2 py-0 dropdown-toggle">THÔNG TIN DỮ LIỆU</a>
+        <a href="#" class="nav-link px-2 py-0 font-13 dropdown-toggle">THÔNG TIN DỮ LIỆU</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Tiểu vùng TNN </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Số lượng, chất lượng nước mặt, nước dưới đất </a></li>
@@ -32,17 +32,17 @@
         </ul>
     </li>
     <li class="wr-navigation-item nav-item font-weight-bold position-relative">
-        <a href="#" class="nav-link px-2 py-0 dropdown-toggle">THÔNG BÁO</a>
+        <a href="#" class="nav-link px-2 py-0 font-13 dropdown-toggle">THÔNG BÁO</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Tổ chức/ cá nhân </a></li>
             <li class="dropdown-item py-1 px-2"><a href="#">Cơ quan nhà nước  </a></li>
         </ul>
     </li>
     <li class="wr-navigation-item nav-item font-weight-bold">
-        <a href="{{ route('tai-nguyen-nuoc.bao-cao') }}" class="nav-link px-2 py-0">BÁO CÁO</a>
+        <a href="{{ route('tai-nguyen-nuoc.bao-cao') }}" class="nav-link px-2 py-0 font-13">BÁO CÁO</a>
     </li>
     <li class="wr-navigation-item nav-item font-weight-bold position-relative">
-        <a href="#" class="nav-link px-2 py-0 dropdown-toggle">NGƯỜI DÙNG</a>
+        <a href="#" class="nav-link px-2 py-0 font-13 dropdown-toggle">NGƯỜI DÙNG</a>
         <ul class="dropdown-menu p-0 sub-menu rounded-0 border-0">
             <li class="dropdown-item py-1 px-2"><a href="#">Thông tin tài khoản </a></li>
             <li class="dropdown-item py-1 px-2"><a href="{{ url('tai-nguyen-nuoc/nguoi-dung/quan-ly-nguoi-dung') }}">Quản lý người dùng </a></li>

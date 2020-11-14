@@ -13,4 +13,4 @@
     @stack('scripts')
 </head>
 <body class="container-fluid p-0">
-    <a href="{{url('/')}}"><img src="{{asset('public/images/stnmt.png')}}" alt="so-tnmt" class="w-100" height="100"></a>
+    <a href="{{url('/')}}" class="w-100"><img src="{{asset('public/images/stnmt.png')}}" alt="so-tnmt" class="w-100" height="100"></a>

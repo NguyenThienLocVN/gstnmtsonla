@@ -221,7 +221,7 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .label-input100 {
@@ -524,6 +524,7 @@ input.input100 {
 
 .container-login100-form-btn, .text-register { line-height: 35px; }
 .font-13 { font-size: 13px !important; }
+.font-14 { font-size: 14px !important; }
 .font-15 { font-size: 15px !important; }
 .font-17 { font-size: 17px !important; }
 .main-navigation {
@@ -591,8 +592,8 @@ input.input100 {
 .select-lake { height: 30px; border: 1px solid gray; }
 .operate-reservoir, .warning-reservoir { border: 1px solid #17a2b8; } 
 .operate-reservoir h6, .warning-reservoir h6 { background: #17a2b8; }
-.operate-reservoir .flat-icon, .warning-reservoir .flat-icon { width: 20px; }
-.warning-reservoir b {font-size: 25px;}
+.flat-icon { width: 20px; }
+.observe-block b {font-size: 25px;}
 .head-intro { border-bottom: 1px solid #6f3c12; }
 .head-intro p { width: fit-content; background: #af5e1a; }
 .list-station .row-station { background: #af5e1a; }
@@ -701,12 +702,16 @@ input.input100 {
 ::-webkit-scrollbar-thumb { background: gray;  border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: darkgray;  }
 
-/* bang quan ly nguoi dung */
+/* Manage user */
 .w-table{width: 95%; margin: 0 auto;}
 .bg-page{background: rgb(196, 211, 246);}
 .header-table{color: rgb(255, 255, 255);background: rgb(108, 122, 224);}
 .font-weight-300{font-weight: 300;}
-/* end table */
+
+/* Bootstrap tab */
+.tab-content { height: 200px; overflow: auto; }
+.tab-observe { height: 75px; overflow: auto; }
+
 @media screen and (min-width: 768px) {
   .container { max-width: 100% !important; }
   .wrap-login100 { width: 60%; }
@@ -717,13 +722,14 @@ input.input100 {
   .modal-body .chart-space { width: 65%; }
   .start-picker, .end-picker { width: 38%; }
   .wrap-content { height: calc(100vh - 205px); }
-  .content-left{width: 30%;}
-  .content-right { width: 70%; padding: 0; }
+  .content-left{width: 35%;}
+  .content-right { width: 65%; padding: 0; }
   #layer-select { display: block; }
 }
 
 
 @media screen and (min-width: 1024px) {
+  .container-fluid { width: 90% !important; }
   .main-welcome {height: unset;}
   .alert-validate::before {
     visibility: visible;
