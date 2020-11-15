@@ -23,7 +23,7 @@
                                 <div class="col-12 col-lg-12 mb-3">
                                     <label for="inputName">Mật khẩu hiện tại</label>
                                     <!-- adding the class is-invalid to the input, shows the invalid feedback below -->
-                                    <input type="password" class="form-control @error('current_password') is-invalid @enderror" id="curent_pasword" name="curent_pasword" placeholder="" value="">
+                                    <input type="password" class="form-control @error('current_password') is-invalid @enderror" id="current_password" name="current_password" placeholder="" value="">
                                     @if ($errors->has('current_password'))
                                         <div class="invalid-feedback">
                                             {{ $errors->first('current_password') }}
