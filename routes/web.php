@@ -39,7 +39,10 @@ Route::group([
     Route::get('/bao-cao', 'WaterResourceController@getReports')->name('tai-nguyen-nuoc.bao-cao');
 
     // Quan ly nguoi dung
-    Route::get('nguoi-dung/quan-ly-nguoi-dung', 'UsersController@quanLy')->name('quan-ly-nguoi-dung');
+    Route::get('nguoi-dung/quan-ly-nguoi-dung', 'UsersController@userManager')->name('quan-ly-nguoi-dung');
+    Route::get('nguoi-dung/thong-tin-nguoi-dung', 'UsersController@infoUser')->name('thong-tin-nguoi-dung');
+    Route::get('nguoi-dung/password', 'UsersController@showUpdatePassword')->name('sua-mat-khau');
+    Route::post('nguoi-dung/password', 'UsersController@updatePassword')->name('sua-mat-khau');
 });
 
 // Khi tuong thuy van

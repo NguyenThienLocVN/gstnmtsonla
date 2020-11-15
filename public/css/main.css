@@ -381,24 +381,16 @@ input.input100 {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
-  background-color: #333333;
-}
-
-
+.login100-form-btn:hover {background-color: #333333;}
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
 @media (max-width: 576px) {
-  .login100-form {
-    padding: 43px 15px 57px 117px;
-  }
+  .login100-form {padding: 43px 15px 57px 117px;}
 }
 
 @media (max-width: 480px) {
-  .login100-form {
-    padding: 43px 15px 57px 15px;
-  }
+  .login100-form {padding: 43px 15px 57px 15px;}
 
   .label-input100 {
     text-align: left;
@@ -414,9 +406,7 @@ input.input100 {
 /*------------------------------------------------------------------
 [ Alert validate ]*/
 
-.validate-input {
-  position: relative;
-}
+.validate-input {position: relative;}
 
 .alert-validate::before {
   content: attr(data-validate);

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Users;
 use App\Offices;
 use App\Roles;
 use DB;
+use Auth;
+
 
 class UsersController extends Controller
 {
@@ -15,15 +18,42 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
-    public function quanLy()
+    public function userManager()
     {
-        $u = Users::all();
         $users = DB::table('users')->join("offices","offices.id","=","users.office_id")
         ->join("roles","roles.id","=","users.role_id")
         ->select('users.*', 'offices.*', 'roles.*', 'users.id as userID' )
         ->get();
-        
         return view('pages.tai-nguyen-nuoc.nguoi-dung.quan-ly-nguoi-dung',["users"=>$users]);
-        
+    }
+    public function infoUser()
+    {
+        $fullname = Auth::user()->fullname;
+        $email = Auth::user()->email;
+        $phone = Auth::user()->phone;
+        $office = Offices::where('id',Auth::user()->office_id)->first();
+        $role = Roles::where('id',Auth::user()->role_id)->first();
+        return view('pages.tai-nguyen-nuoc.nguoi-dung.thong-tin-nguoi-dung',["fullname"=>$fullname,"email"=>$email,"phone"=>$phone,"office"=>$office,"role"=>$role]);
+    }
+    public function showUpdatePassword()
+    {
+        return view('pages.tai-nguyen-nuoc.nguoi-dung.update-password');
+    }
+    public function updatePassword(Request $request, Users $user)
+    {
+        $this->validate($request, [
+            'current_password'=>'required',
+            'new_password'=>'required|min:6',
+            'confirm_password'=>'required|same:new_password',
+        ]);
+        $data = $request->all();
+        if(!Hash::check($data['curent_pasword'], Auth::user()->password)){
+            return redirect()->back()->with(['error'=>'Bạn nhập sai mật khẩu hiện tại. Hãy thử lại !']);
+        }else{
+            $user = Auth::user();
+            $user->password = bcrypt($request->get('new_password'));
+            $user->save();
+            return redirect('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung')->with('success','Bạn đổi mật khẩu thành công !');
+        }
     }
 }

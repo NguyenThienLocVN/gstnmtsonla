@@ -8,7 +8,7 @@
         <span class="account-header d-inline-block px-2 float-right font-13"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
     </div>
     @include('layouts.navigation-tai-nguyen-nuoc')
-    <div class="wrap-content bg-page pt-3">
+    <div class="wrap-content bg-page pt-3 pb-3">
         <!-- Code -->
         <div class="overflow-auto">
             <table class="table bg-light w-table mx-auto">
@@ -35,7 +35,7 @@
                             <td class="p-2 text-center">{{$user->phone}}</td>
                             <td class="p-2 text-left">{{$user->office_name}}</td>
                             <td class="p-2 text-left">{{$user->role_name}}</td>
-                            <td class="p-2 text-center"><?= ($user->status == 1) ? "Đã duyệt" : "Chưa duyệt" ?> &nbsp; <?= ($user->status == 1) ? "" : "<span class='btn btn-sm btn-danger float-right mr-1'>Duyệt</span>" ?></td>
+                            <td class="p-2 text-center"><?= ($user->status == 1) ? "Đã duyệt" : "Chưa duyệt" ?> &nbsp; <?= ($user->status == 1) ? "" : "<span class='btn btn-sm btn-danger'>Duyệt</span>" ?></td>
                         </tr>
                         <?php $i++ ?>
                     @endforeach
