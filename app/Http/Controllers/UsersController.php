@@ -48,7 +48,7 @@ class UsersController extends Controller
         ]);
         $data = $request->all();
         if(!Hash::check($data['current_password'], Auth::user()->password)){
-            return redirect()->back()->with(['error'=>'Bạn nhập sai mật khẩu hiện tại. Hãy thử lại !']);
+            return redirect()->back()->withErrors(['current_password'=>'Bạn nhập sai mật khẩu hiện tại. Hãy thử lại !']);
         }else{
             $user = Auth::user();
             $user->password = bcrypt($request->get('new_password'));

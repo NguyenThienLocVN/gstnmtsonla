@@ -29,11 +29,6 @@
                                             {{ $errors->first('current_password') }}
                                         </div>
                                     @endif
-                                    @if (session('error'))
-                                        <div class="invalid-feedback">
-                                            {{ session('error') }}
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
                             <div class="row">
