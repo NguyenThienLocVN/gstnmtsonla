@@ -49,6 +49,7 @@ class UsersController extends Controller
             'current_password.required'=>'Ở đây bạn không được để rỗng !',
             'new_password.required'=>'Ở đây bạn không được để rỗng !',
             'confirm_password.required'=>'Ở đây bạn không được để rỗng !',
+            'confirm_password.same'=>'Xác nhận mật khẩu phải giống với mật khẩu mới !',
         ]);
         $data = $request->all();
         if(!Hash::check($data['current_password'], Auth::user()->password)){
