@@ -694,7 +694,7 @@ input.input100 {
 
 /* Manage user */
 .w-table{width: 95%; margin: 0 auto;}
-.bg-page{background: rgb(196, 211, 246); height: fit-content !important;}
+.bg-page{background: rgb(196, 211, 246); height: 100vh -100px !important;}
 .header-table{color: rgb(255, 255, 255);background: rgb(108, 122, 224);}
 .font-weight-300{font-weight: 300;}
 

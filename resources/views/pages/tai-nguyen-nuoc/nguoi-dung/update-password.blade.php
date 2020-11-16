@@ -54,8 +54,8 @@
                                 </div>
                             </div>
                         <div class="modal-footer justify-content-end border-top row mx-auto p-0">
-                            <button class="btn btn-lg btn-outline-success col-sm-3 mx-1">Xác nhận</button>
-                            <a class="btn btn-lg btn-outline-danger col-sm-3 mx-0" href="{{ url('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung') }}" aria-label="Close">
+                            <button class="btn btn-outline-success col-sm-3 mx-1">Xác nhận</button>
+                            <a class="btn btn-outline-danger col-sm-2 mx-0" href="{{ url('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung') }}" aria-label="Close">
                                 <span aria-hidden="true">Hủy</span>
                             </a>
                         </div>

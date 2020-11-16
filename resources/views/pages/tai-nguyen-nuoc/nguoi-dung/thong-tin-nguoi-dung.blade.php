@@ -9,11 +9,6 @@
         <span class="account-header d-inline-block px-2 float-right font-13"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
     </div>
     @include('layouts.navigation-tai-nguyen-nuoc')
-    @if (session('success'))
-        <div class="alert alert-success text-center">
-            {{ session('success') }}
-        </div>
-    @endif
     <div class="wrap-content bg-page pt-3 pb-3">
         <!-- Code -->
         <div class="card text-center w-75 mx-auto">
@@ -43,6 +38,11 @@
                 <div class="justify-content-end d-flex">
                     <a href="{{ url('tai-nguyen-nuoc/nguoi-dung/password') }}" class="btn btn-warning">Đổi Mật Khẩu</a>
                 </div>
+                @if (session('success'))
+                    <div class="alert alert-success text-center">
+                        {{ session('success') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>
