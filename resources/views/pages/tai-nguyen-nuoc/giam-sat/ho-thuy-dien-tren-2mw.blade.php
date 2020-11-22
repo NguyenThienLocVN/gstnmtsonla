@@ -24,18 +24,44 @@
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-between my-2">
-                <div class="col-6 d-flex">
-                    <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="input-district" id="input-filter-district" placeholder="Chọn huyện..">
-                    <span class="btn-select-dropdown text-white bg-primary text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                <div class="col-6 position-relative validate-input m-b-26">
+                    <div class="d-flex">
+                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="district" id="filter-district" placeholder="Chọn huyện..">
+                        <span id="btn-select-dropdown-district" class="btn-select-dropdown bg-primary text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    </div>
+                    <ul id="dropdownlist-district" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light"> 
+                        @foreach($districts as $district)
+                            <li class="p-1 district_id" id="{{$district->id}}">{{$district->district_name}}</li>
+                        @endforeach
+                        <input type="hidden" name="district_id" id="district_id">
+                    </ul>
                 </div>
-                <div class="col-6 d-flex">
-                    <input type="text" class="w-100 pl-1 font-13 rounded-0 input-filter" name="input-district" id="input-filter-region" placeholder="Chọn tiểu vùng..">
-                    <span class="btn-select-dropdown text-white bg-primary text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                <div class="col-6 position-relative validate-input m-b-26">
+                    <div class="d-flex">
+                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="subregion" id="filter-subregion" placeholder="Chọn tiểu vùng..">
+                        <span id="btn-select-dropdown-subregion" class="btn-select-dropdown bg-primary text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    </div>
+                    <ul id="dropdownlist-subregion" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
+                        @foreach($subregions as $subregion)
+                            <li class="p-1 subregion_id" id="{{$subregion->id}}">{{$subregion->subregion_name}}</li>
+                        @endforeach
+                        <input type="hidden" name="subregion_id" id="subregion_id">
+                    </ul>
                 </div>
             </div>
-            <div class="construction-result col-12 d-flex my-2">
-                <input type="text" class="w-100 pl-1 font-13 rounded-0 input-filter" name="input-district" id="input-filter-region" placeholder="Chọn công trình..">
-                <span class="btn-select-dropdown text-white bg-primary text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+            <div class="d-flex align-items-center justify-content-between my-2">
+                <div class="col-12 position-relative validate-input m-b-26">
+                    <div class="d-flex">
+                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="construction" id="filter-construction" placeholder="Chọn công trình..">
+                        <span id="btn-select-dropdown-construction" class="btn-select-dropdown bg-primary text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    </div>
+                    <ul id="dropdownlist-construction" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
+                        @foreach($constructions as $construction)
+                        <li class="p-1 construction_id" id="{{$construction->id}}">{{$construction->construction_name}}</li>
+                        @endforeach
+                        <input type="hidden" name="construction_id" id="construction_id">
+                    </ul>
+                </div>
             </div>
 
             <div class="col-12 d-flex my-2">
@@ -158,5 +184,5 @@
 </main>
 
 <script src="{{ asset('public/js/configMap.js') }}"></script>
-<script src="{{ asset('public/js/main.js') }}"></script>
+<script src="{{ asset('public/js/waterResources.js') }}"></script>
 @endsection

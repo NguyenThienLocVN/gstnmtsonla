@@ -26,10 +26,10 @@
 					<div class="position-relative wrap-input100 mb-3">
 						<div class="position-relative validate-input d-flex" data-validate="Tên đăng nhập là bắt buộc">
 							<i class="fa fa-user position-absolute px-1" aria-hidden="true"></i>
-							<input id="username" value="{{ old('username') }}" class="input100 pl-4" type="text" name="username" placeholder="Tên đăng nhập" required>
+							<input id="username" value="{{ old('username') }}" class="input100 pl-4" type="text" name="username" placeholder="Tên đăng nhập" required autofocus>
 							<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white bg-light text-dark text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
 						</div>
-						<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
+						<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-common position-absolute font-13 w-100 text-left bg-light">
 							@foreach($offices as $office)
 								<li class="p-1" id="{{$office->username}}">{{$office->office_name}}</li>
 							@endforeach

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\Common\Users;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Input;
 use Auth;
-use App\Offices;
+use App\Models\Common\Offices;
 
 class RegisterController extends Controller
 {
@@ -89,9 +89,9 @@ class RegisterController extends Controller
         $user->password = Hash::make(Input::get('password'));
         $user->phone = Input::get('phone');
         $user->office_id = Input::get('office_id');
-        $user->role_id = "1";
+        $user->role_id = "2";
         $user->status = "0";
         $user->save();
-        return redirect($this->redirectTo)->withSuccess('Đăng ký tài khoản thành công. Vui lòng đăng nhập!');
+        return redirect($this->redirectTo)->withSuccess('Đăng ký tài khoản thành công. Vui lòng liên hệ quản trị viên để xét duyệt tài khoản!');
     }
 }

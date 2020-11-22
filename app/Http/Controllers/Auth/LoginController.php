@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
-use App\Offices;
+use App\Models\Common\Users;
+use App\Models\Common\Offices;
 use DB;
 
 class LoginController extends Controller
@@ -54,20 +55,29 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
   
+        $user = User::where('username', $input['username'])->first();
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
+        if($user->status == 1)
         {
-            return redirect()->route('index');
-        }else{
+            if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
+            {
+                return redirect()->route('index');
+            }
+            else{
+                return redirect()->route('login')
+                    ->withErrors('Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản!');
+            }
+        }
+        else{
             return redirect()->route('login')
-                ->withErrors('Tên đăng nhập hoặc mật khẩu không đúng');
+                ->withErrors('Vui lòng liên hệ quản trị viên để xét duyệt tài khoản!');
         }
           
     }
 
     public function logout(Request $request) {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
     
 }

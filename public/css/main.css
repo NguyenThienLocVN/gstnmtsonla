@@ -672,8 +672,10 @@ input.input100 {
 .input-filter { outline: none; border: 1px solid darkgray; }
 .input-filter:focus { box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
 
-.dropdownlist-office { border: 1px solid lightgray; height: 80px; overflow: auto; z-index: 2; }
-.dropdownlist-office li:hover { background: #e0e0e0; cursor: pointer; }
+.dropdownlist-common { border: 1px solid lightgray; height: 80px; overflow: auto; z-index: 2; }
+.dropdownlist-common li:hover { background: #e0e0e0; cursor: pointer; }
+#dropdownlist-district, #dropdownlist-subregion { width: 143px; }
+#dropdownlist-construction { width: 300px; }
 #btn-select-dropdown-office { background: lightgray; }
 #btn-select-dropdown-office:hover { background: #c7c7c7 !important; }
 

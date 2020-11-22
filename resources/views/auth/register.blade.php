@@ -57,7 +57,7 @@
 								<input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="office" id="filter-office" placeholder="Cơ quan / Tổ chức">
 								<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
 							</div>
-							<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-office position-absolute font-13 w-100 text-left bg-light">
+							<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-common position-absolute font-13 w-100 text-left bg-light">
 								@foreach($offices as $office)
 								<li class="p-1 office_id" id="{{$office->id}}">{{$office->office_name}}</li>
 								@endforeach

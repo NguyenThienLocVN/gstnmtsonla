@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Users;
-use App\Offices;
-use App\Roles;
+use App\Models\Common\Users;
+use App\Models\Common\Offices;
+use App\Models\Common\Roles;
 use DB;
 use Auth;
 
@@ -60,5 +60,12 @@ class UsersController extends Controller
             $user->save();
             return redirect('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung')->with('success','Bạn đổi mật khẩu thành công !');
         }
+    }
+
+    public function activeUser($id){
+        $user = User::find($id);
+        $user->status = 1;
+        $user->save();
+        return redirect()->back()->with('message','Operation Successful !');
     }
 }

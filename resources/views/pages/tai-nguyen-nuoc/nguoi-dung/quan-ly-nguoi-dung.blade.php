@@ -35,7 +35,7 @@
                             <td class="p-2 text-center">{{$user->phone}}</td>
                             <td class="p-2 text-left">{{$user->office_name}}</td>
                             <td class="p-2 text-left">{{$user->role_name}}</td>
-                            <td class="p-2 text-center"><?= ($user->status == 1) ? "Đã duyệt" : "Chưa duyệt" ?> &nbsp; <?= ($user->status == 1) ? "" : "<span class='btn btn-sm btn-danger'>Duyệt</span>" ?></td>
+                            <td class="p-2 text-center"><?= ($user->status == 1) ? "Đã duyệt" : "Chưa duyệt" ?> &nbsp; <?= ($user->status == 1) ? "" : "<button onclick='' class='btn btn-sm btn-danger'>Duyệt</button>" ?></td>
                         </tr>
                         <?php $i++ ?>
                     @endforeach
