@@ -703,6 +703,7 @@ input.input100 {
 /* Bootstrap tab */
 .tab-content { height: 200px; overflow: auto; }
 .tab-observe { height: 75px; overflow: auto; }
+.nav-tabs { align-items: center; }
 
 @media screen and (min-width: 768px) {
   .container { max-width: 100% !important; }

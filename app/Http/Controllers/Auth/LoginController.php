@@ -55,7 +55,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
   
-        $user = User::where('username', $input['username'])->first();
+        $user = Users::where('username', $input['username'])->first();
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         if($user->status == 1)
         {

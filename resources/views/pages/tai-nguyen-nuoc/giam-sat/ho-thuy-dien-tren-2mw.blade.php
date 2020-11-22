@@ -69,6 +69,7 @@
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-reservoir-tab" data-toggle="tab" href="#nav-reservoir" role="tab" aria-controls="nav-reservoir" aria-selected="true">Thông tin hồ chứa</a>
                         <a class="nav-item nav-link" id="nav-specification-tab" data-toggle="tab" href="#nav-specification" role="tab" aria-controls="nav-specification" aria-selected="false">Thông số kỹ thuật</a>
+                        <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
                     </div>
                 </nav>
             </div>

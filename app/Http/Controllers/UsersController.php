@@ -63,7 +63,7 @@ class UsersController extends Controller
     }
 
     public function activeUser($id){
-        $user = User::find($id);
+        $user = Users::find($id);
         $user->status = 1;
         $user->save();
         return redirect()->back()->with('message','Operation Successful !');
