@@ -1,13 +1,8 @@
 @section('title', 'Đổi mật khẩu')
-@extends('layouts.base')
+@extends('layouts.base-wr')
 
 @section('content')
-<main class="main-welcom p-0 position-relative">
-    <div class="text-center w-100 bg-light">
-        <h6 class="d-inline-block text-primary p-2 font-weight-bold">HỆ THỐNG QUẢN LÝ, GIÁM SÁT, KHAI THÁC SỬ DỤNG TÀI NGUYÊN NƯỚC - TỈNH SƠN LA</h6>
-        <span class="account-header d-inline-block px-2 float-right font-13"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
-    </div>
-    @include('layouts.navigation-tai-nguyen-nuoc')
+
     <div class="wrap-content bg-page pt-2 pb-2">
         <!-- Code -->
         <div id="my-modal" class="pb-1">
@@ -53,7 +48,7 @@
                                     @endif
                                 </div>
                             </div>
-                        <div class="modal-footer justify-content-end border-top row mx-auto p-0">
+                        <div class="justify-content-end border-top row mx-auto p-0">
                             <button class="btn btn-outline-success col-sm-3 mx-1">Xác nhận</button>
                             <a class="btn btn-outline-danger col-sm-2 mx-0" href="{{ url('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung') }}" aria-label="Close">
                                 <span aria-hidden="true">Hủy</span>
@@ -64,7 +59,6 @@
             </div>
         </div>
     </div>
-</main>
 
 <script src="{{ asset('public/js/configMap.js') }}"></script>
 <script src="{{ asset('public/js/main.js') }}"></script>

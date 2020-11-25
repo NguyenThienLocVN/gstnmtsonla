@@ -27,7 +27,13 @@
             url: window.location.href+'/'+id,
             type: 'get',
             dataType: 'json',
+            beforeSend: function(){
+                $("#loading-gif-image").show();
+                $("#overlay").show();
+            },
             success: function(response){
+                $("#loading-gif-image").hide();
+                $("#overlay").hide();
                 for(var i=0; i < response.length; i++)
                 {
                     var li = "<li class='p-1 construction_id' id='"+response[i].id+"'>"+response[i].construction_name+"</li>";
@@ -138,5 +144,10 @@
             }
         }
     });
+
+    // Click to toggle expand sidebar
+    $("#toggle-sidebar").on('click', function(){
+        $("#sidebar").slideToggle("slow");
+    })
 
 })(jQuery);

@@ -1,14 +1,12 @@
 @section('title', 'Giám sát Tài nguyên & Môi trường Sơn La')
-@extends('layouts.base')
+@include('layouts.header')
 
-@section('content')
 <main class="main-welcome pt-2 position-relative">
     <div class="d-flex justify-content-center flex-column flex-md-row align-items-start">
         
         <div class="col-lg-12 col-md-9 px-0 text-center welcome-title">
-            <h5 class="font-weight-bold text-white">SỞ TÀI NGUYÊN MÔI TRƯỜNG TỈNH SƠN LA </h5>
-            <h3 class="font-weight-bold text-white mt-2 mb-1">HỆ THỐNG QUẢN LÝ GIÁM SÁT, KHAI THÁC SỬ DỤNG</h3> 
-            <h3 class="font-weight-bold text-white">TÀI NGUYÊN VÀ MÔI TRƯỜNG</h3></div>
+            <h4 class="font-weight-bold text-white mt-2 mb-1">QUẢN LÝ THÔNG TIN DỮ LIỆU</h4> 
+            <h4 class="font-weight-bold text-white">TÀI NGUYÊN VÀ MÔI TRƯỜNG SƠN LA</h4></div>
         </div>
         <div class="d-flex mt-3 align-items-center justify-content-center flex-column flex-md-row">
             <div class="col-lg-4 col-md-6 d-flex col-12 justify-content-center py-2 py-md-0 order-md-1">
@@ -75,4 +73,3 @@
             </div>
         </div>
 </main>
-@endsection

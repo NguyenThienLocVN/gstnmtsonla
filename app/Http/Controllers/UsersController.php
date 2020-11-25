@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Common\Users;
-use App\Models\Common\Offices;
-use App\Models\Common\Roles;
+use App\Users;
+use App\Offices;
+use App\Roles;
 use DB;
 use Auth;
 
