@@ -34,8 +34,8 @@ Route::group([
 
     // Giam sat - Ho chua 
     Route::get('/giam-sat/ho-thuy-dien-tren-2mw', 'WaterResourceController@hydropowerReservoirGreaterThan2MW')->name('ho-thuy-dien-tren-2mw');
-    Route::get('/giam-sat/ho-thuy-dien-tren-2mw/district/{districtId}', 'WaterResourceController@getDataByDistrict');
-    Route::get('/giam-sat/ho-thuy-dien-tren-2mw/subregion/{subregionId}', 'WaterResourceController@getConstructionsBySubregion');
+    Route::get('/district/{districtId}', 'WaterResourceController@getDataByDistrict');
+    Route::get('/subregion/{subregionId}', 'WaterResourceController@getConstructionsBySubregion');
 
     // Bao cao
     Route::get('/bao-cao', 'WaterResourceController@getReports')->name('tai-nguyen-nuoc.bao-cao');
@@ -45,6 +45,10 @@ Route::group([
     Route::get('nguoi-dung/thong-tin-nguoi-dung', 'UsersController@infoUser')->name('thong-tin-nguoi-dung');
     Route::get('nguoi-dung/password', 'UsersController@showUpdatePassword')->name('sua-mat-khau');
     Route::post('nguoi-dung/password', 'UsersController@updatePassword')->name('sua-mat-khau');
+
+    // Quan ly cap phep
+    Route::get('cap-phep/nuoc-mat', 'LicensesController@surfaceWater')->name('cap-phep-nuoc-mat');
+    Route::get('cap-phep/{licenseId}', 'LicensesController@getLicense');
 
     // User active
     Route::post('nguoi-dung/kich-hoat/{id}', 'UsersController@activeUser')->name('kich-hoat-nguoi-dung');

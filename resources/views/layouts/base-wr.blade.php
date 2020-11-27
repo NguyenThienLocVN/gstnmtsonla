@@ -1,7 +1,7 @@
 @include('layouts.header')
 
 <div class="container-fluid p-0">
-    <div class="text-center w-100 bg-light">
+    <div class="text-center w-100 bg-lightgray">
         <a href="{{ route('index') }}" class="base-color float-left btn-back" title="Quay lại"><i class="fa fa-reply-all" aria-hidden="true"></i></a>
         <h6 class="d-inline-block base-color p-2 font-weight-bold font-15">HỆ THỐNG QUẢN LÝ, GIÁM SÁT, KHAI THÁC SỬ DỤNG TÀI NGUYÊN NƯỚC</h6>
         <span class="account-header d-inline-block px-2 float-right font-13 position-relative"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
@@ -31,7 +31,7 @@
                     <a class="nav-link have-submenu font-weight-bold collapsed text-truncate" href="#submenu2" data-toggle="collapse" data-target="#submenu2"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="d-none d-sm-inline">CẤP PHÉP</span></a>
                     <div class="collapse" id="submenu2" aria-expanded="false">
                         <ul class="flex-column nav submenu-list">
-                            <li class="nav-item"><a class="nav-link font-weight-bold" href="#"><span>QLCP khai thác sử dụng nước mặt </span></a></li>
+                            <li class="nav-item"><a class="nav-link font-weight-bold" href="{{ route('cap-phep-nuoc-mat') }}"><span>QLCP khai thác sử dụng nước mặt </span></a></li>
                             <li class="nav-item"><a class="nav-link font-weight-bold" href="#"><span>QLCP khai thác sử dụng nước dưới đất </span></a></li>
                         </ul>
                     </div>

@@ -45,8 +45,8 @@ a:hover {
   color: unset;
 }
 
-.base-color{ color: #2672af !important }
-.base-bgcolor{ background: #2672af !important }
+.base-color{ color: #6f3c3e !important }
+.base-bgcolor{ background: #6f3c3e !important }
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
@@ -522,6 +522,7 @@ input.input100 {
 .font-14 { font-size: 14px !important; }
 .font-15 { font-size: 15px !important; }
 .font-17 { font-size: 17px !important; }
+.bg-lightgray { background: #e8e8e8!important }
 .main-navigation {
   background: #b7eca6 !important;
   height: 35px !important;
