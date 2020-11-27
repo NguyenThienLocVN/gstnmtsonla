@@ -10,6 +10,11 @@ use App\Models\WaterResource\Licenses;
 
 class LicensesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function surfaceWater(){
         $districts = Districts::orderBy('district_name', 'ASC')->get();
         $subregions = Subregions::orderBy('subregion_name', 'ASC')->get();
