@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subregions extends Model
 {
-    //
+    public $incrementing = false;
 }

@@ -46,9 +46,9 @@ class UsersController extends Controller
             'new_password'=>'required|min:6',
             'confirm_password'=>'required|same:new_password',
         ],[
-            'current_password.required'=>'Ở đây bạn không được để rỗng !',
-            'new_password.required'=>'Ở đây bạn không được để rỗng !',
-            'confirm_password.required'=>'Ở đây bạn không được để rỗng !',
+            'current_password.required'=>'Mục này là bắt buộc !',
+            'new_password.required'=>'Mục này là bắt buộc !',
+            'confirm_password.required'=>'Mục này là bắt buộc !',
             'confirm_password.same'=>'Xác nhận mật khẩu phải giống với mật khẩu mới !',
         ]);
         $data = $request->all();

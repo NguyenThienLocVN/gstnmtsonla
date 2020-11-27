@@ -11,6 +11,51 @@
         $('#dropdownlist-construction').hide();
     })
 
+    // Function remove duplicate from array
+    function removeDuplicates(originalArray, prop) {
+        var newArray = [];
+        var lookupObject  = {};
+   
+        for(var i in originalArray) {
+           lookupObject[originalArray[i][prop]] = originalArray[i];
+        }
+   
+        for(i in lookupObject) {
+            newArray.push(lookupObject[i]);
+        }
+         return newArray;
+    }
+
+    // Function AJAX load construction by subregion
+    function ajaxConstructionBySubregion(id){
+        $.ajax({
+            url: window.location.href+'/subregion/'+id,
+            type: 'get',
+            dataType: 'json',
+            beforeSend: function(){
+                $("#loading-gif-image").show();
+                $("#overlay").show();
+            },
+            success: function(response){
+                $("#loading-gif-image").hide();
+                $("#overlay").hide();
+                var uniqueConstruction = removeDuplicates(response, "id");
+                for(var i=0; i < uniqueConstruction.length; i++)
+                {
+                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"'>"+uniqueConstruction[i].construction_name+"</li>";
+                    $("#dropdownlist-construction").append(li);
+                }
+
+                $('#dropdownlist-construction li').on('click',function(){
+                    $('#filter-construction').val(this.innerText);
+                    $('#dropdownlist-construction').hide();
+                    var id = $(this).attr('id');
+                    $("#construction_id").val(id);
+                })
+            }
+        }); 
+    }
+
     // Event click district on list
     $('#dropdownlist-district li').on('click',function(){
         $('#filter-district').val(this.innerText);
@@ -24,7 +69,7 @@
         $('#filter-subregion').val('');
         // AJAX request load construction when select district
         $.ajax({
-            url: window.location.href+'/'+id,
+            url: window.location.href+'/district/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -34,9 +79,12 @@
             success: function(response){
                 $("#loading-gif-image").hide();
                 $("#overlay").hide();
-                for(var i=0; i < response.length; i++)
+
+                // Load constructions
+                var uniqueConstruction = removeDuplicates(response.constructions, "id");
+                for(var i=0; i < uniqueConstruction.length; i++)
                 {
-                    var li = "<li class='p-1 construction_id' id='"+response[i].id+"'>"+response[i].construction_name+"</li>";
+                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"'>"+uniqueConstruction[i].construction_name+"</li>";
                     $("#dropdownlist-construction").append(li);
                 }
 
@@ -45,6 +93,25 @@
                     $('#dropdownlist-construction').hide();
                     var id = $(this).attr('id');
                     $("#construction_id").val(id);
+                })
+
+                // Load subregion
+                var uniqueSubregion = removeDuplicates(response.subregions, "id");
+                for(var i=0; i < uniqueSubregion.length; i++)
+                {
+                    var li = "<li class='p-1 subregion_id' id='"+uniqueSubregion[i].id+"'>"+uniqueSubregion[i].subregion_name+"</li>";
+                    $("#dropdownlist-subregion").append(li);
+                }
+
+                $('#dropdownlist-subregion li').on('click',function(){
+                    $("#dropdownlist-construction li").remove();
+                    $('#filter-construction').val('');
+                    $('#filter-subregion').val(this.innerText);
+                    $('#dropdownlist-subregion').hide();
+                    var id = $(this).attr('id');
+                    $("#subregion_id").val(id);
+
+                    ajaxConstructionBySubregion(id);
                 })
             }
         }); 
@@ -86,6 +153,11 @@
         $('#dropdownlist-subregion').hide();
         var id = $(this).attr('id');
         $("#subregion_id").val(id);
+
+        $("#dropdownlist-construction li").remove();
+        $('#filter-construction').val('')
+        // AJAX request load construction when select subregion
+        ajaxConstructionBySubregion(id);
     })
 
     // Event search subregion by input
