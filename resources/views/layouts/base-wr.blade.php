@@ -7,7 +7,7 @@
         <span class="account-header d-inline-block px-2 float-right font-13 position-relative"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Xin chào, {{Auth::user()->username}}</span>
     </div>
     <div class="d-flex w-100 main-content">
-        <div class="col-2 collapse show p-0 min-vh-100" id="sidebar"  aria-expanded="false">
+        <div class="col-2 collapse show p-0 h-100" id="sidebar"  aria-expanded="false">
             <ul class="nav flex-column w-100 flex-nowrap overflow-hidden">
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold text-truncate" href="#"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">GIỚI THIỆU</span></a>
@@ -70,7 +70,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col p-0">
+        <div class="col p-0 h-100">
             @yield('content')
         </div>
     </div>

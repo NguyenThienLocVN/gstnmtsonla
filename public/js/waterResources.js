@@ -29,7 +29,7 @@
     // Function AJAX load construction by subregion
     function ajaxConstructionBySubregion(id){
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/subregion/'+id,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/subregion/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -61,7 +61,7 @@
 
     function fillConstructionInfo(id){
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/cap-phep/'+id,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/cap-phep/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -106,7 +106,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select district
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/district/'+id,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
