@@ -53,7 +53,7 @@
                     </div>
                     <ul id="dropdownlist-construction" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
                         @foreach($constructions as $construction)
-                        <li class="p-1 construction_id" id="{{$construction->id}}">{{$construction->construction_name}}</li>
+                        <li class="p-1 construction_id" id="{{$construction->id}}" onclick="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</li>
                         @endforeach
                         <input type="hidden" name="construction_id" id="construction_id">
                     </ul>

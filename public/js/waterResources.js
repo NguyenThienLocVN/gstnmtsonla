@@ -42,7 +42,7 @@
                 var uniqueConstruction = removeDuplicates(response, "id");
                 for(var i=0; i < uniqueConstruction.length; i++)
                 {
-                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"'>"+uniqueConstruction[i].construction_name+"</li>";
+                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"' onclick='setFocusByPosition("+uniqueConstruction[i].lat_dams+","+uniqueConstruction[i].long_dams+")'>"+uniqueConstruction[i].construction_name+"</li>";
                     $("#dropdownlist-construction").append(li);
                 }
 
@@ -121,7 +121,7 @@
                 var uniqueConstruction = removeDuplicates(response.constructions, "id");
                 for(var i=0; i < uniqueConstruction.length; i++)
                 {
-                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"'>"+uniqueConstruction[i].construction_name+"</li>";
+                    var li = "<li class='p-1 construction_id' id='"+uniqueConstruction[i].id+"' onclick='setFocusByPosition("+uniqueConstruction[i].lat_dams+","+uniqueConstruction[i].long_dams+")'>"+uniqueConstruction[i].construction_name+"</li>";
                     $("#dropdownlist-construction").append(li);
                 }
 
