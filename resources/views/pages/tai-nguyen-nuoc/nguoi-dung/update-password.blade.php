@@ -2,16 +2,15 @@
 @extends('layouts.base-wr')
 
 @section('content')
-
-    <div class="wrap-content bg-page pt-2 pb-2">
+    <div class="bg-page h-100 pt-2 pb-2">
         <!-- Code -->
         <div id="my-modal" class="pb-1">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <form action="{{ url('tai-nguyen-nuoc/nguoi-dung/password') }}" method="post" class="col-sm-12">
                 @csrf
-                    <div class="modal-content col-md-9 mx-auto">
+                    <div class="modal-content p-0 col-md-9 mx-auto">
                         <div class="modal-header bg-light">
-                            <h5 class="modal-title text-center col-sm-12" id="my-modal-title">Đổi Mật Khẩu</h5>
+                            <h5 class="modal-title text-center col-sm-12 font-weight-bold" id="my-modal-title">Đổi Mật Khẩu</h5>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -48,7 +47,7 @@
                                     @endif
                                 </div>
                             </div>
-                        <div class="justify-content-end border-top row mx-auto p-0">
+                        <div class="justify-content-end row mx-auto p-0">
                             <button class="btn btn-outline-success col-sm-3 mx-1">Xác nhận</button>
                             <a class="btn btn-outline-danger col-sm-2 mx-0" href="{{ url('tai-nguyen-nuoc/nguoi-dung/thong-tin-nguoi-dung') }}" aria-label="Close">
                                 <span aria-hidden="true">Hủy</span>
