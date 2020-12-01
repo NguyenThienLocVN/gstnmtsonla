@@ -8,6 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/css/main.css')}}">
+	<script src="{{ asset('public/js/jquery-3.5.1.min.js') }}"></script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 </head>
 <body>
 	<div class="limiter">
@@ -52,17 +55,14 @@
 							<input class="input100 pl-4" type="text" name="phone" placeholder="Số điện thoại">
 							<span class="focus-input100"></span>
 						</div>
-						<div class="col-sm-12 col-md-5 p-0 position-relative validate-input m-b-26" data-validate="Cơ quan / Đơn vị">
-							<div class="d-flex">
-								<input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="office" id="filter-office" placeholder="Cơ quan / Tổ chức">
-								<span id="btn-select-dropdown-office" class="btn-select-dropdown text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-							</div>
-							<ul id="dropdownlist-office" style="display: none;" class="dropdownlist-common position-absolute font-13 w-100 text-left bg-light">
+						<div class="col-sm-12 col-md-5 p-0 position-relative validate-input m-b-26 text-left" data-validate="Cơ quan / Đơn vị">
+							<select class="w-100" name="" id="dropdownlist-office">
+								<option value="" disabled selected>Chọn đơn vị..</option>
 								@foreach($offices as $office)
-								<li class="p-1 office_id" id="{{$office->id}}">{{$office->office_name}}</li>
+									<option value="{{$office->id}}">{{$office->office_name}}</option>
 								@endforeach
-								<input type="hidden" name="office_id" id="office_id">
-							</ul>
+							</select>
+							<input type="hidden" name="office_id" id="office_id">
 						</div>
 					</div>
                     @if ($errors->any())
@@ -79,9 +79,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></script>
 	<script src="{{ asset('public/js/auth.js')}}"></script>
 
 </body>

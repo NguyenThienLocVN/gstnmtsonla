@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Input;
 use Auth;
-use App\Models\Common\Offices;
+use App\Offices;
 
 class RegisterController extends Controller
 {
@@ -68,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Users::create([
             'fullname' => $data['fullname'],
             'email' => $data['email'],
             'username' => $data['username'],
@@ -82,7 +82,7 @@ class RegisterController extends Controller
         return view('auth.register',['offices'=>$offices]);
     }
     protected function doRegister(){
-        $user = new User;
+        $user = new Users;
         $user->fullname = Input::get('fullname');
         $user->email = Input::get('email');
         $user->username = Input::get('username');
