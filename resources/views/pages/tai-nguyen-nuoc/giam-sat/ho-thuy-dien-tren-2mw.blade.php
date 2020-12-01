@@ -38,9 +38,6 @@
                         <span id="btn-select-dropdown-subregion" class="btn-select-dropdown base-bgcolor text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
                     </div>
                     <ul id="dropdownlist-subregion" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
-                        @foreach($subregions as $subregion)
-                            <li class="p-1 subregion_id" id="{{$subregion->id}}">{{$subregion->subregion_name}}</li>
-                        @endforeach
                         <input type="hidden" name="subregion_id" id="subregion_id">
                     </ul>
                 </div>

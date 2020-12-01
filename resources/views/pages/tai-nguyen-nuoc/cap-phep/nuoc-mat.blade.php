@@ -3,8 +3,10 @@
 
 @push('scripts')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-   <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js" integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js" integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ==" crossorigin=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 @endpush
 @section('content')
     <div class="h-100 w-100 position-relative">
@@ -21,42 +23,30 @@
             </div>
             <div class="d-flex align-items-center my-2">
                 <div class="col-6 position-relative validate-input m-b-26">
-                    <div class="d-flex">
-                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="district" id="filter-district" placeholder="Chọn huyện..">
-                        <span id="btn-select-dropdown-district" class="btn-select-dropdown base-bgcolor text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                    </div>
-                    <ul id="dropdownlist-district" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light"> 
+                    <select class="w-100" name="" id="dropdownlist-district">
+                        <option value="" disabled selected>Chọn huyện ...</option>
                         @foreach($districts as $district)
-                            <li class="p-1 district_id" id="{{$district->id}}">{{$district->district_name}}</li>
+                            <option value="{{$district->id}}">{{$district->district_name}}</option>
                         @endforeach
-                        <input type="hidden" name="district_id" id="district_id">
-                    </ul>
+                    </select>
                 </div>
                 <div class="col-6 position-relative validate-input m-b-26">
-                    <div class="d-flex">
-                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="subregion" id="filter-subregion" placeholder="Chọn tiểu vùng..">
-                        <span id="btn-select-dropdown-subregion" class="btn-select-dropdown base-bgcolor text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                    </div>
-                    <ul id="dropdownlist-subregion" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
-                        @foreach($subregions as $subregion)
-                            <li class="p-1 subregion_id" id="{{$subregion->id}}">{{$subregion->subregion_name}}</li>
-                        @endforeach
-                        <input type="hidden" name="subregion_id" id="subregion_id">
-                    </ul>
+                    <select class="w-100" name="" id="dropdownlist-commune">
+                        <option value="" disabled selected>Chọn xã ...</option>
+                        <option value="">Chiềng Khay</option>
+                        <option value="">Nậm Giôn</option>
+                        <option value="">Tạ Bú</option>
+                    </select>
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-between my-2">
                 <div class="col-12 position-relative validate-input m-b-26">
-                    <div class="d-flex">
-                        <input type="text" class="pl-1 w-100 font-13 rounded-0 input-filter" name="construction" id="filter-construction" placeholder="Chọn công trình..">
-                        <span id="btn-select-dropdown-construction" class="btn-select-dropdown base-bgcolor text-white text-center"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                    </div>
-                    <ul id="dropdownlist-construction" style="display: none;" class="dropdownlist-common position-absolute font-13 text-left bg-light">
+                    <select class="w-100" name="" id="dropdownlist-construction">
+                        <option value="" disabled selected>Chọn công trình..</option>
                         @foreach($constructions as $construction)
-                        <li class="p-1 construction_id" id="{{$construction->id}}" onclick="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</li>
+                            <option value="{{$construction->license_num}}" onchange="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</option>
                         @endforeach
-                        <input type="hidden" name="construction_id" id="construction_id">
-                    </ul>
+                    </select>
                 </div>
             </div>
             <div class="col-12">
@@ -116,12 +106,12 @@
                     <div class="col-8"><input class="form-control" type="text" name="input-extraction-mode" id="input-extraction-mode" readonly></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
-                    <div class="col-4 p-0 font-weight-bold font-15">Lượng nước khai thác</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-flow" id="input-flow" readonly></div>
-                </div>
-                <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Phương thức khai thác</div>
                     <div class="col-8"><input class="form-control" type="text" name="input-extraction-method" id="input-extraction-method" readonly></div>
+                </div>
+                <div class="col-12 d-flex mb-1 align-items-center">
+                    <div class="col-4 p-0 font-weight-bold font-15">Q<sub>TT</sub></div>
+                    <div class="col-8"><input class="form-control" type="text" name="input-max-flow" id="input-max-flow" readonly></div>
                 </div>
                 <div class="d-flex my-4">
                     <div class="col-12">

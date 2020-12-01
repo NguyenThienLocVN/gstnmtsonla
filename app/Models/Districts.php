@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Models\WaterResource;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Districts extends Model
 {
-    public $table = 'districts';
-
     public $incrementing = false;
 }

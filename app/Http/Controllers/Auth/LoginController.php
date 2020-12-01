@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\Common\Users;
-use App\Models\Common\Offices;
+use App\Models\Users;
+use App\Models\Offices;
 use DB;
 
 class LoginController extends Controller

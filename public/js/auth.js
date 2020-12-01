@@ -65,17 +65,8 @@
     }
 
     // Dropdown select office when register
-    $('#btn-select-dropdown-office').on('click', function(){
-        $('#dropdownlist-office').slideToggle();
-    })
-    $("#filter-office").on('focus',function(){
-        $('#dropdownlist-office').show();
-    })
-    $('#dropdownlist-office li').on('click',function(){
-        $('#filter-office').val(this.innerText);
-        $('#dropdownlist-office').hide();
-        var id = $(this).attr('id');
-        $("#office_id").val(id);
-        $('#username').val(id);
+    $("#dropdownlist-office").select2({});
+    $('#dropdownlist-office').on('change',function(){
+        $("#office_id").val(this.value);
     })
 })(jQuery);

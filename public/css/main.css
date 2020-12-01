@@ -537,15 +537,16 @@ input.input100 {
   line-height: 35px !important;
 }
 .nav-height a, .account-header, .btn-back{
-  height: 35px !important;
-  line-height: 35px !important;
+  height: 34px !important;
+  line-height: 34px !important;
   transition-duration: 0.5s;
   cursor: pointer;
 }
 .btn-back{ padding: 4px 10px; }
-.account-header:hover, .btn-back:hover {
+.account-info:hover, .btn-back:hover {
   background: lightgray;
 }
+.account-logout:hover { color:#fff; background: indianred; }
 .wr-navigation-item {
   width: 14.11%;
 } 
@@ -707,7 +708,7 @@ input.input100 {
 
 /* Manage user */
 .w-table{width: 95%; margin: 0 auto;}
-.bg-page{background: rgb(196, 211, 246); height: 100vh -100px !important;}
+.bg-page{background: rgb(196, 211, 246);}
 .header-table{color: rgb(255, 255, 255);background: rgb(108, 122, 224);}
 .font-weight-300{font-weight: 300;}
 .user-feature { background: orange;
@@ -727,7 +728,7 @@ input.input100 {
 
 #sidebar { background: #c6f7a9; }
 #sidebar a { color: #6f3c12;  }
-#sidebar a:hover { background: #fdca1359; }
+#sidebar li:hover, #sidebar .active { background: #fdca1359; }
 .nav-item .fa { width: 18px; }
 .nav-link { padding: 0.5rem 0.75rem; }
 .submenu-list .nav-item { background: #f1d991; border-bottom: 1px solid #dac68b; }
@@ -791,9 +792,4 @@ input.input100 {
   .navbar .nav-item:hover .dropdown-menu{ display: block;}
   .navbar .nav-item .dropdown-menu{ margin-top:0; }
   .navbar .nav-item .dropdown-menu .dropdown-item:hover{ background: #fdca1359 }
-}
-
-
-@media screen and (min-width: 1400px) {
-  .main-welcome {height: calc(100vh - 100px) !important;}
 }
