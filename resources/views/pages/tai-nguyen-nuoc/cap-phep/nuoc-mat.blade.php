@@ -44,7 +44,7 @@
                     <select class="w-100" name="" id="dropdownlist-construction">
                         <option value="" disabled selected>Chọn công trình..</option>
                         @foreach($constructions as $construction)
-                            <option value="{{$construction->id}}" onchange="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</option>
+                            <option value="{{$construction->license_num}}" onchange="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -106,12 +106,12 @@
                     <div class="col-8"><input class="form-control" type="text" name="input-extraction-mode" id="input-extraction-mode" readonly></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
-                    <div class="col-4 p-0 font-weight-bold font-15">Lượng nước khai thác</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-flow" id="input-flow" readonly></div>
-                </div>
-                <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Phương thức khai thác</div>
                     <div class="col-8"><input class="form-control" type="text" name="input-extraction-method" id="input-extraction-method" readonly></div>
+                </div>
+                <div class="col-12 d-flex mb-1 align-items-center">
+                    <div class="col-4 p-0 font-weight-bold font-15">Q<sub>TT</sub></div>
+                    <div class="col-8"><input class="form-control" type="text" name="input-max-flow" id="input-max-flow" readonly></div>
                 </div>
                 <div class="d-flex my-4">
                     <div class="col-12">

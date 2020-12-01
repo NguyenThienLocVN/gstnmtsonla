@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\WaterResource\Reports;
-use App\Models\WaterResource\Constructions;
-use App\Models\WaterResource\Districts;
-use App\Models\WaterResource\Subregions;
+use App\Models\Reports;
+use App\Models\Licenses;
+use App\Models\Districts;
 use DB;
 
 class WaterResourceController extends Controller
@@ -24,31 +23,30 @@ class WaterResourceController extends Controller
     public function hydropowerReservoirGreaterThan2MW()
     {
         $districts = Districts::orderBy('district_name', 'ASC')->get();
-        $subregions = Subregions::orderBy('subregion_name', 'ASC')->get();
-        $constructions = Constructions::orderBy('construction_name', 'ASC')->get();
-        return view('pages.tai-nguyen-nuoc.giam-sat.ho-thuy-dien-tren-2mw', ['districts' => $districts, 'subregions' => $subregions, 'constructions' => $constructions]);
+        $constructions = Licenses::orderBy('construction_name', 'ASC')->get();
+        return view('pages.tai-nguyen-nuoc.giam-sat.ho-thuy-dien-tren-2mw', ['districts' => $districts, 'constructions' => $constructions]);
     }
 
-    
     public function getDataByDistrict($districtId){
         // Get constructions by district
-        $constructions = Constructions::where('district_id', $districtId)->get();
-
-        // Get subregion by district
-        $subregions = DB::table('constructions')->where('district_id', $districtId)
-                    ->join('subregions', 'constructions.subregion_id', '=', 'subregions.id')
-                    ->select('constructions.*','subregions.*', 'constructions.id as userID' )
-                    ->get();
-
-        return response()->json(['constructions' => $constructions, 'subregions' => $subregions]);
+        $constructions = Licenses::where('district_id', $districtId)->get();
+        return response()->json(['constructions' => $constructions]);
     }
 
-    // Get constructions by subregion
-    public function getConstructionsBySubregion($subregionId){
-        $constructions = Constructions::where('subregion_id', $subregionId)->get();
-        return response()->json($constructions);
+    // Quan ly cap phep nuoc mat
+    public function surfaceWater(){
+        $districts = Districts::orderBy('district_name', 'ASC')->get();
+        $constructions = Licenses::orderBy('construction_name', 'ASC')->get();
+        return view('pages.tai-nguyen-nuoc.cap-phep.nuoc-mat', ['districts' => $districts, 'constructions' => $constructions]);
     }
 
+    // Lay thong tin ho chua theo ID
+    public function getLicense($licenseId){
+        $license = Licenses::where('license_num', $licenseId)->first();
+        return response()->json($license);
+    }
+
+    // Lay thong tin bao cao
     public function getReports()
     {
         $rps = Reports::paginate(8);

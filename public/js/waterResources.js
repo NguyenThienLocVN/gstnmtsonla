@@ -21,7 +21,7 @@
 
     function fillConstructionInfo(id){
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/cap-phep/'+id,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/cap-phep/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -46,7 +46,7 @@
                 $("#input-long-factory").val(response.long_factory);
                 $("#input-extraction-mode").val(response.extraction_mode);
                 $("#input-extraction-method").val(response.extraction_method);
-                $("#input-flow").val(response.max_flow);
+                $("#input-max-flow").val(response.max_flow);
             }
         })
     }
@@ -58,7 +58,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select district
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/district/'+this.value,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+this.value,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -70,10 +70,11 @@
                 $("#overlay").hide();
 
                 // Load constructions
-                var uniqueConstruction = removeDuplicates(response.constructions, "id");
-                for(var i=0; i < uniqueConstruction.length; i++)
+                var defaultOption = "<option value='' disabled selected>Chọn công trình..</option>";
+                $("#dropdownlist-construction").append(defaultOption);
+                for(var i=0; i < response.constructions.length; i++)
                 {
-                    var option = "<option value='"+uniqueConstruction[i].id+"' onclick='setFocusByPosition("+uniqueConstruction[i].lat_dams+","+uniqueConstruction[i].long_dams+")'>"+uniqueConstruction[i].construction_name+"</option>";
+                    var option = "<option value='"+response.constructions[i].license_num+"' onclick='setFocusByPosition("+response.constructions[i].lat_dams+","+response.constructions[i].long_dams+")'>"+response.constructions[i].construction_name+"</option>";
                     $("#dropdownlist-construction").append(option);
                 }
 

@@ -71,6 +71,9 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold text-truncate" href="#"><i class="fa fa-address-book-o" aria-hidden="true"></i> <span class="d-none d-sm-inline">QUẢN TRỊ</span></a>
+                </li>
             </ul>
         </div>
         <div class="col p-0 h-100">

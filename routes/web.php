@@ -47,8 +47,8 @@ Route::group([
     Route::post('nguoi-dung/password', 'UsersController@updatePassword')->name('sua-mat-khau');
 
     // Quan ly cap phep
-    Route::get('cap-phep/nuoc-mat', 'LicensesController@surfaceWater')->name('cap-phep-nuoc-mat');
-    Route::get('cap-phep/{licenseId}', 'LicensesController@getLicense');
+    Route::get('cap-phep/nuoc-mat', 'WaterResourceController@surfaceWater')->name('cap-phep-nuoc-mat');
+    Route::get('cap-phep/{licenseId}', 'WaterResourceController@getLicense');
 
     // User active
     Route::post('nguoi-dung/kich-hoat/{id}', 'UsersController@activeUser')->name('kich-hoat-nguoi-dung');

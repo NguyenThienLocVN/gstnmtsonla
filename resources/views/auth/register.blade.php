@@ -56,7 +56,7 @@
 							<span class="focus-input100"></span>
 						</div>
 						<div class="col-sm-12 col-md-5 p-0 position-relative validate-input m-b-26 text-left" data-validate="Cơ quan / Đơn vị">
-							<select class="w-100" name="" id="dropdownlist-office">
+							<select class="w-100" name="" id="dropdownlist-office" required>
 								<option value="" disabled selected>Chọn đơn vị..</option>
 								@foreach($offices as $office)
 									<option value="{{$office->id}}">{{$office->office_name}}</option>
