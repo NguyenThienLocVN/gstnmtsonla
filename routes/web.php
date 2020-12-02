@@ -61,5 +61,43 @@ Route::group([
 ], function () {
     Route::get('/', 'HydrologicalController@index')->name('khi-tuong-thuy-van');
     Route::get('quan-trac/so-lieu-khi-tuong', 'HydrologicalController@meteorologyData')->name('khi-tuong-thuy-van.so-lieu-khi-tuong');
-    Route::get('quan-trac/so-lieu-khi-tuong/{id}','HydrologicalController@getMeteorologyData');
+    Route::get('quan-trac/so-lieu-khi-tuong/{id}', 'HydrologicalController@getMeteorologyData');
+});
+
+// Admin
+Route::group(['prefix' => 'admin'], function () {
+
+//    Route::get('/', 'Admin\DashboardController@index')->name('admin');
+    Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin');
+
+    Route::group(['prefix' => 'cities'], function () {
+
+        Route::get('index', 'Admin\CitiesController@getIndex')->name('cities.index');
+
+        Route::get('create', 'Admin\CitiesController@getCreate')->name('cities.create');
+        Route::post('create', 'Admin\CitiesController@postCreate')->name('cities.create');
+
+        Route::post('import_cities', 'Admin\CitiesController@import')->name('cities.import');
+
+        Route::get('edit', 'Admin\CitiesController@getEdit')->name('cities.edit');
+        Route::post('edit', 'Admin\CitiesController@postEdit')->name('cities.edit');
+
+        Route::get('delete', 'Admin\CitiesController@getDelete')->name('cities.delete');
+    });
+
+
+    Route::group(['prefix' => 'licensing'], function () {
+
+        Route::get('index', 'Admin\LicensingController@getIndex')->name('licensing.index');
+
+        Route::get('create', 'Admin\LicensingController@getCreate')->name('licensing.create');
+        Route::post('create', 'Admin\LicensingController@postCreate')->name('licensing.create');
+
+        Route::get('edit', 'Admin\LicensingController@getEdit')->name('licensing.edit');
+        Route::post('edit', 'Admin\LicensingController@postEdit')->name('licensing.edit');
+
+        Route::get('delete', 'Admin\LicensingController@getDelete')->name('licensing.delete');
+    });
+
+
 });
