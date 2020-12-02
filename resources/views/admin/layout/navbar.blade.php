@@ -29,17 +29,17 @@
                 </ul>
             </li>
 
-            <li class="treeview">
-                <a href="javascript:void(0)"><i class="fa fa-map-o"></i><span>Cấp phép nước mặt</span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{route('licensing.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a>
-                    </li>
-                    <li><a href="{{route('licensing.create')}}"><i class="fa fa-circle-o"></i> Thêm mới</a>
-                    </li>
-                </ul>
-            </li>
+            {{--<li class="treeview">--}}
+                {{--<a href="javascript:void(0)"><i class="fa fa-book"></i><span>Cấp phép nước mặt</span>--}}
+                    {{--<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>--}}
+                {{--</a>--}}
+                {{--<ul class="treeview-menu">--}}
+                    {{--<li><a href="{{route('licensing.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a>--}}
+                    {{--</li>--}}
+                    {{--<li><a href="{{route('licensing.create')}}"><i class="fa fa-circle-o"></i> Thêm mới</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
 
             {{--@endif--}}
         </ul>
