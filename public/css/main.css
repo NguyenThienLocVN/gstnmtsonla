@@ -726,7 +726,7 @@ input.input100 {
   display: block;
 }
 
-#sidebar { background: #c6f7a9; }
+#sidebar { background: #c6f7a9; overflow:auto; }
 #sidebar a { color: #6f3c12;  }
 #sidebar li:hover, #sidebar .active { background: #fdca1359; }
 .nav-item .fa { width: 18px; }

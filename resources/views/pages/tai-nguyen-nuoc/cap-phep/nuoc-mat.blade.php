@@ -44,7 +44,7 @@
                     <select class="w-100" name="" id="dropdownlist-construction">
                         <option value="" disabled selected>Chọn công trình..</option>
                         @foreach($constructions as $construction)
-                            <option value="{{$construction->license_num}}" onchange="setFocusByPosition({{$construction->lat_dams}},{{$construction->long_dams}})">{{$construction->construction_name}}</option>
+                            <option value="{{$construction->license_num}}" id="{{$construction->lat_dams}},{{$construction->long_dams}}">{{$construction->construction_name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -55,69 +55,71 @@
             <div class="license-info">
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Tên công trình</div>
-                    <div class="col-8 position-relative"><input class="form-control" type="text" name="input-construction-name" class="input-construction-name" id="input-construction-name" readonly></div>
+                    <div class="col-8 position-relative"><span id="input-construction-name"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Chủ đầu tư</div>
-                    <div class="col-8 w-100"><input class="form-control" type="text" name="input-investor" id="input-investor" readonly></div>
+                    <div class="col-8 w-100"><span id="input-investor"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Số giấy phép</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-license-num" id="input-license-num" readonly></div>
+                    <div class="col-8"><span id="input-license-num"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Ngày cấp</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-license-date" id="input-license-date" readonly></div>
+                    <div class="col-8"><span id="input-license-date"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Thời hạn GP</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-license-duration" id="input-license-duration" readonly></div>
+                    <div class="col-8"><span id="input-license-duration"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Cơ quan cấp</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-license-by" id="input-license-by" readonly></div>
+                    <div class="col-8"><span id="input-license-by"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Nguồn nước</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-water-source" id="input-water-source" readonly></div>
+                    <div class="col-8"><span id="input-water-source"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Vị trí địa lý</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-location" id="input-location" readonly></div>
+                    <div class="col-8"><span id="input-location"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Tọa độ đập chính</div>
-                    <div class="col-8 d-flex align-items-center"><span class="col-1 p-0">X</span><input class="form-control col-6" type="text" name="input-lat-dams" id="input-lat-dams" readonly></div>
+                    <div class="col-8 d-flex align-items-center"><span class="col-2 p-0">X :</span>&nbsp;<span id="input-lat-dams"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15"></div>
-                    <div class="col-8 d-flex align-items-center"><span class="col-1 p-0">Y</span><input class="form-control col-6" type="text" name="input-long-dams" id="input-long-dams" readonly></div>
+                    <div class="col-8 d-flex align-items-center"><span class="col-2 p-0">Y :</span>&nbsp;<span id="input-long-dams"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Tọa độ nhà máy</div>
-                    <div class="col-8 d-flex align-items-center"><span class="col-1 p-0">X</span><input class="form-control col-6" type="text" name="input-lat-factory" id="input-lat-factory" readonly></div>
+                    <div class="col-8 d-flex align-items-center"><span class="col-2 p-0">X :</span>&nbsp;<span id="input-lat-factory"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15"></div>
-                    <div class="col-8 d-flex align-items-center"><span class="col-1 p-0">Y</span><input class="form-control col-6" type="text" name="input-long-factory" id="input-long-factory" readonly></div>
+                    <div class="col-8 d-flex align-items-center"><span class="col-2 p-0">Y :</span>&nbsp;<span id="input-long-factory"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Chế độ khai thác</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-extraction-mode" id="input-extraction-mode" readonly></div>
+                    <div class="col-8"><span id="input-extraction-mode"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Phương thức khai thác</div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-extraction-method" id="input-extraction-method" readonly></div>
+                    <div class="col-8"><span id="input-extraction-method"></span></div>
+                </div>
+                <div class="col-12 d-flex mb-1 align-items-center">
+                    <div class="col-4 p-0 font-weight-bold font-15">Công suất</div>
+                    <div class="col-8"><span id="input-wattage"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
                     <div class="col-4 p-0 font-weight-bold font-15">Q<sub>TT</sub></div>
-                    <div class="col-8"><input class="form-control" type="text" name="input-max-flow" id="input-max-flow" readonly></div>
+                    <div class="col-8"><span id="input-max-flow"></span></div>
                 </div>
                 <div class="d-flex my-4">
                     <div class="col-12">
-                        <button type="button" class="btn btn-success">Sửa</button>
-                        <button type="button" class="btn btn-warning mx-2">Cập nhật</button>
-                        <button type="button" class="btn btn-danger">Quay lại</button>
+                        <button type="button" class="btn btn-success">Xem PDF</button>
                     </div>
                 </div>
             </div>
