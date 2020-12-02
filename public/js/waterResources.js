@@ -1,9 +1,5 @@
 (function ($) {
 
-    $("#dropdownlist-district").select2({});
-    $("#dropdownlist-commune").select2({});
-    $("#dropdownlist-construction").select2({});
-
     // Function remove duplicate from array
     function removeDuplicates(originalArray, prop) {
         var newArray = [];
@@ -32,27 +28,27 @@
                 $("#loading-gif-image").hide();
                 $("#overlay").hide();
                 
-                $("#input-construction-name").val(response.construction_name);
-                $("#input-investor").val(response.investor);
-                $("#input-license-num").val(response.license_num);
-                $("#input-license-date").val(response.license_date);
-                $("#input-license-duration").val(response.license_duration);
-                $("#input-license-by").val(response.license_by);
-                $("#input-water-source").val(response.water_source);
-                $("#input-location").val(response.commune +', '+ response.district);
-                $("#input-lat-dams").val(response.lat_dams);
-                $("#input-long-dams").val(response.long_dams);
-                $("#input-lat-factory").val(response.lat_factory);
-                $("#input-long-factory").val(response.long_factory);
-                $("#input-extraction-mode").val(response.extraction_mode);
-                $("#input-extraction-method").val(response.extraction_method);
-                $("#input-max-flow").val(response.max_flow);
+                $("#input-construction-name").text(response.construction_name);
+                $("#input-investor").text(response.investor);
+                $("#input-license-num").text(response.license_num);
+                $("#input-license-date").text(response.license_date);
+                $("#input-license-duration").text(response.license_duration);
+                $("#input-license-by").text(response.license_by);
+                $("#input-water-source").text(response.water_source);
+                $("#input-location").text(response.commune +', '+ response.district);
+                $("#input-lat-dams").text(response.lat_dams);
+                $("#input-long-dams").text(response.long_dams);
+                $("#input-lat-factory").text(response.lat_factory);
+                $("#input-long-factory").text(response.long_factory);
+                $("#input-extraction-mode").text(response.extraction_mode);
+                $("#input-extraction-method").text(response.extraction_method);
+                $("#input-max-flow").text(response.max_flow);
             }
         })
     }
 
     // Event click district on list
-    $('#dropdownlist-district').on('change',function(){
+    $('#dropdownlist-district').on('select2:select',function(){
         $('#dropdownlist-construction').empty();
 
         $('.form-control').val('');
@@ -70,26 +66,36 @@
                 $("#overlay").hide();
 
                 // Load constructions
-                var defaultOption = "<option value='' disabled selected>Chọn công trình..</option>";
+                var defaultOption = "<option value='' >Chọn công trình..</option>";
                 $("#dropdownlist-construction").append(defaultOption);
                 for(var i=0; i < response.constructions.length; i++)
                 {
-                    var option = "<option value='"+response.constructions[i].license_num+"' onclick='setFocusByPosition("+response.constructions[i].lat_dams+","+response.constructions[i].long_dams+")'>"+response.constructions[i].construction_name+"</option>";
+                    var option = "<option value='"+response.constructions[i].license_num+"' id='"+response.constructions[i].lat_dams+","+response.constructions[i].long_dams+"'>"+response.constructions[i].construction_name+"</option>";
                     $("#dropdownlist-construction").append(option);
                 }
 
-                $('#dropdownlist-construction').on('change',function(){
+                $('#dropdownlist-construction').on('select2:select',function(e){
                     // AJAX load construction info
-                    fillConstructionInfo(this.value);
+                    fillConstructionInfo(e.params.data.id);
+                    var idSelected = e.params.data.element.id;
+                    var splitId = idSelected.split(',');
+                    setFocusByPosition(splitId[0], splitId[1]);
                 })
             }
         }); 
     })
 
-    $('#dropdownlist-construction').on('change',function(){
+    $('#dropdownlist-construction').on('select2:select',function(e){
         // AJAX load construction info
-        fillConstructionInfo(this.value);
+        fillConstructionInfo(e.params.data.id);
+        var idSelected = e.params.data.element.id;
+        var splitId = idSelected.split(',');
+        setFocusByPosition(splitId[0], splitId[1]);
     })
+
+    $("#dropdownlist-district").select2({});
+    $("#dropdownlist-commune").select2({});
+    $("#dropdownlist-construction").select2({});
 
     // Click to toggle expand sidebar
     $("#toggle-sidebar").on('click', function(){

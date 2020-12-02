@@ -19,7 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold text-truncate" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="d-none d-sm-inline">QUAN TRẮC</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{  request()->is('tai-nguyen-nuoc/giam-sat/*') ? 'active' : '' }}">
                     <a class="nav-link have-submenu font-weight-bold collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-unlock-alt" aria-hidden="true"></i><span class="d-none d-sm-inline">GIÁM SÁT</span></a>
                     <div class="collapse {{  request()->is('tai-nguyen-nuoc/giam-sat/*') ? 'show' : '' }}" id="submenu1" aria-expanded="false">
                         <ul class="flex-column nav submenu-list">
@@ -31,7 +31,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{  request()->is('tai-nguyen-nuoc/cap-phep/*') ? 'active' : '' }}">
                     <a class="nav-link have-submenu font-weight-bold collapsed text-truncate" href="#submenu2" data-toggle="collapse" data-target="#submenu2"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="d-none d-sm-inline">CẤP PHÉP</span></a>
                     <div class="collapse {{  request()->is('tai-nguyen-nuoc/cap-phep/*') ? 'show' : '' }}" id="submenu2" aria-expanded="false">
                         <ul class="flex-column nav submenu-list">
