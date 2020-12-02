@@ -30,20 +30,24 @@ class CitiesController extends Controller
 
     public function postCreate(Request $request)
     {
-        $this->validate($request,
-            [
-                'code' => 'required|min:3|max:10|unique:cities,code',
-                'name' => 'required',
-                'level' => 'required',
-            ],
-            [
-                'code.required' => 'Bạn chưa nhập mã',
-                'code.min' => 'Mã phải có độ dài ít nhất 3 ký tự',
-                'code.max' => 'Mã chỉ có độ dài đến 10 ký tự',
-                'code.unique' => 'Mã đã tồn tại',
-                'name.required' => 'Bạn chưa nhập tên',
-                'level.required' => 'Bạn chưa chọn loại',
-            ]);
+        $rules = [
+            'code' => 'required|min:3|max:10|unique:cities,code',
+            'name' => 'required',
+            'level' => 'required',
+        ];
+        $message = [
+            'code.required' => 'Bạn chưa nhập mã',
+            'code.min' => 'Mã phải có độ dài ít nhất 3 ký tự',
+            'code.max' => 'Mã chỉ có độ dài đến 10 ký tự',
+            'code.unique' => 'Mã đã tồn tại',
+            'name.required' => 'Bạn chưa nhập tên',
+            'level.required' => 'Bạn chưa chọn loại',
+        ];
+        if ($request->level == 2) {
+            $rules['parent_code'] = 'required';
+            $message['parent_code.required'] = "Bạn chưa chọn trực thuộc";
+        }
+        $this->validate($request,$rules, $message);
 
         $city = new Cities();
         $city->code = strtoupper($request->code);

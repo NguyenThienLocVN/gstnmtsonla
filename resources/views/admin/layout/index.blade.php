@@ -76,7 +76,7 @@
             </div>
         @endif
         @yield('content')
-            
+
         @include('admin.cities.modal')
 
 
