@@ -43,7 +43,7 @@ function setFocusByPosition(lat, long){
 
 var locations = JSON.parse(document.getElementById('locationJson').value);
 var smallIcon = new L.Icon({
-  iconUrl: window.location.origin+'/gstnmtsonla/public/images/icon/dams-icon.png',
+  iconUrl: window.location.origin+'/public/images/icon/dams-icon.png',
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
   iconSize:    [25, 25],
   iconAnchor:  [12, 41],
