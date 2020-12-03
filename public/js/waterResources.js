@@ -17,7 +17,7 @@
     // Get construction data & fetch all
     function fillConstructionInfo(id){
         $.ajax({
-            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/cap-phep/'+id,
+            url: window.location.origin+'/tai-nguyen-nuoc/cap-phep/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -68,7 +68,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select district
         $.ajax({
-            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+this.value,
+            url: window.location.origin+'/tai-nguyen-nuoc/district/'+this.value,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -110,7 +110,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select commune
         $.ajax({
-            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/commune/'+this.value,
+            url: window.location.origin+'/tai-nguyen-nuoc/commune/'+this.value,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
