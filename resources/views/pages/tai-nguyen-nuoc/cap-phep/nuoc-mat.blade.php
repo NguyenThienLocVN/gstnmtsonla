@@ -114,8 +114,12 @@
                     <div class="col-8"><span id="input-wattage"></span></div>
                 </div>
                 <div class="col-12 d-flex mb-1 align-items-center">
-                    <div class="col-4 p-0 font-weight-bold font-15">Q<sub>TT</sub></div>
+                    <div class="col-4 p-0 font-weight-bold font-15">Dòng chảy lớn nhất</div>
                     <div class="col-8"><span id="input-max-flow"></span></div>
+                </div>
+                <div class="col-12 d-flex mb-1 align-items-center">
+                    <div class="col-4 p-0 font-weight-bold font-15">Q<sub>TT</sub></div>
+                    <div class="col-8"><span id="input-min-flow"></span></div>
                 </div>
                 <div class="d-flex my-4">
                     <div class="col-12">
@@ -134,6 +138,8 @@
                 <option value="ImageryClarity">Bản đồ vệ tinh 2</option>
             </select>
         </div>
+
+        <textarea id="locationJson" class="d-none">{!! $locationJson !!}</textarea>
     </div>
     <script src="{{ asset('public/js/configMap.js') }}"></script>
     <script src="{{ asset('public/js/waterResources.js') }}"></script>

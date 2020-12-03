@@ -17,7 +17,7 @@
     // Get construction data & fetch all
     function fillConstructionInfo(id){
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/cap-phep/'+id,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/cap-phep/'+id,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -42,7 +42,9 @@
                 $("#input-long-factory").text(response.long_factory);
                 $("#input-extraction-mode").text(response.extraction_mode);
                 $("#input-extraction-method").text(response.extraction_method);
-                $("#input-max-flow").text(response.max_flow);
+                $("#input-max-flow").html(response.max_flow+" <span> m<sup>3</sup>/s</span>");
+                $("#input-min-flow").html(response.min_flow+" <span> m<sup>3</sup>/s</span>");
+                $("#input-wattage").text(response.wattage+' MW');
             }
         })
     }
@@ -66,7 +68,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select district
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/district/'+this.value,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+this.value,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){
@@ -108,7 +110,7 @@
         $('.form-control').val('');
         // AJAX request load construction when select commune
         $.ajax({
-            url: window.location.origin+'/tai-nguyen-nuoc/commune/'+this.value,
+            url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/commune/'+this.value,
             type: 'get',
             dataType: 'json',
             beforeSend: function(){

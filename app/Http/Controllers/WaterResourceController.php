@@ -29,14 +29,15 @@ class WaterResourceController extends Controller
     }
 
     public function getDataByDistrict($districtId){
-        // Get communes by district
+        // Lay xa theo huyen
         $communes = Cities::where('parent_code', $districtId)->orderBy('name', 'ASC')->get();
 
-        // Get constructions by district
+        // Lay cong trinh theo huyen
         $constructions = Licenses::where('district_code', $districtId)->get();
         return response()->json(['constructions' => $constructions, 'communes' => $communes]);
     }
 
+    // Lay cong trinh theo xa
     public function getConstructionsByCommune($communeId){
         $constructions = Licenses::where('commune_code', $communeId)->get();
         return response()->json(['constructions' => $constructions]);
@@ -47,7 +48,29 @@ class WaterResourceController extends Controller
         $districts = Cities::where('level', 1)->orderBy('name', 'ASC')->get();
         $communes = Cities::where('level', 2)->orderBy('name', 'ASC')->get();
         $constructions = Licenses::orderBy('construction_name', 'ASC')->get();
-        return view('pages.tai-nguyen-nuoc.cap-phep.nuoc-mat', ['districts' => $districts, 'communes' => $communes, 'constructions' => $constructions]);
+
+        // Lay toa do dap thuy dien hien thi tren map
+        $locationArray = ['type' => 'FeatureCollection',
+                            'features' =>[]
+                        ];
+
+        foreach($constructions as $cons){
+            array_push($locationArray['features'], 
+                [
+                    'geometry' => [
+                        'type' => 'Point',
+                        'coordinates' => [$cons->long_dams, $cons->lat_dams]
+                    ],
+                    'type' => 'Feature',
+                    'properties' => [
+                        'hoverContent' => "<b>$cons->title</b>",
+                    ],
+                    'id' => $cons->gid
+                ]);
+        }
+
+        $locationJson = json_encode($locationArray, JSON_UNESCAPED_UNICODE);
+        return view('pages.tai-nguyen-nuoc.cap-phep.nuoc-mat', ['districts' => $districts, 'communes' => $communes, 'constructions' => $constructions, 'locationJson' => $locationJson]);
     }
 
     // Lay thong tin ho chua theo ID
