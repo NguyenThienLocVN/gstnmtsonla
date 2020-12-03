@@ -35,7 +35,7 @@ Route::group([
     // Giam sat - Ho chua 
     Route::get('/giam-sat/ho-thuy-dien-tren-2mw', 'WaterResourceController@hydropowerReservoirGreaterThan2MW')->name('ho-thuy-dien-tren-2mw');
     Route::get('/district/{districtId}', 'WaterResourceController@getDataByDistrict');
-    Route::get('/subregion/{subregionId}', 'WaterResourceController@getConstructionsBySubregion');
+    Route::get('/commune/{communeId}', 'WaterResourceController@getConstructionsByCommune');
 
     // Bao cao
     Route::get('/bao-cao', 'WaterResourceController@getReports')->name('tai-nguyen-nuoc.bao-cao');

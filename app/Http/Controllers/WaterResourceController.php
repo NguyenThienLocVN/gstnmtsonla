@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reports;
 use App\Models\Licenses;
-use App\Models\Districts;
+use App\Models\Cities;
 use DB;
 
 class WaterResourceController extends Controller
@@ -22,22 +22,32 @@ class WaterResourceController extends Controller
 
     public function hydropowerReservoirGreaterThan2MW()
     {
-        $districts = Districts::orderBy('district_name', 'ASC')->get();
+        $districts = Cities::where('level', 1)->orderBy('name', 'ASC')->get();
+        $communes = Cities::where('level', 2)->orderBy('name', 'ASC')->get();
         $constructions = Licenses::orderBy('construction_name', 'ASC')->get();
-        return view('pages.tai-nguyen-nuoc.giam-sat.ho-thuy-dien-tren-2mw', ['districts' => $districts, 'constructions' => $constructions]);
+        return view('pages.tai-nguyen-nuoc.giam-sat.ho-thuy-dien-tren-2mw', ['districts' => $districts, 'communes' => $communes, 'constructions' => $constructions]);
     }
 
     public function getDataByDistrict($districtId){
+        // Get communes by district
+        $communes = Cities::where('parent_code', $districtId)->orderBy('name', 'ASC')->get();
+
         // Get constructions by district
-        $constructions = Licenses::where('district_id', $districtId)->get();
+        $constructions = Licenses::where('district_code', $districtId)->get();
+        return response()->json(['constructions' => $constructions, 'communes' => $communes]);
+    }
+
+    public function getConstructionsByCommune($communeId){
+        $constructions = Licenses::where('commune_code', $communeId)->get();
         return response()->json(['constructions' => $constructions]);
     }
 
     // Quan ly cap phep nuoc mat
     public function surfaceWater(){
-        $districts = Districts::orderBy('district_name', 'ASC')->get();
+        $districts = Cities::where('level', 1)->orderBy('name', 'ASC')->get();
+        $communes = Cities::where('level', 2)->orderBy('name', 'ASC')->get();
         $constructions = Licenses::orderBy('construction_name', 'ASC')->get();
-        return view('pages.tai-nguyen-nuoc.cap-phep.nuoc-mat', ['districts' => $districts, 'constructions' => $constructions]);
+        return view('pages.tai-nguyen-nuoc.cap-phep.nuoc-mat', ['districts' => $districts, 'communes' => $communes, 'constructions' => $constructions]);
     }
 
     // Lay thong tin ho chua theo ID
