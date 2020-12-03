@@ -1,5 +1,5 @@
 @extends('admin.layout.index')
-@section('page_title','Danh sách huyện xã')
+@section('page_title','Danh sách cấp phép nước mặt')
 
 @section('custom_css')
     <style>
@@ -9,7 +9,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Danh sách huyện, xã
+            Danh sách cấp phép nước mặt
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> Quản trị</a></li>
@@ -46,40 +46,34 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($cities as $ci)
+                            @foreach($licensing as $value)
                                 <tr class="text-center">
-                                    <td>{{$ci->id}}</td>
-                                    <td>{{$ci->code}}</td>
-                                    <td>{{$ci->name}}</td>
-                                    <td>
-                                        @if($ci->level == 1)
-                                            Huyện
-                                        @else
-                                            Xã
-                                        @endif
-                                    </td>
-                                    <td>{{$ci->parent_code}}</td>
-                                    <td>
-                                        @if($ci->created_at == null)
-                                            -
-                                        @else
-                                            {{date_format(date_create($ci->created_at),"d/m/Y H:i:s")}}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if($ci->updated_at == null)
-                                            -
-                                        @else
-                                            {{date_format(date_create($ci->updated_at),"d/m/Y H:i:s")}}
-                                        @endif
-                                    </td>
+                                    <td>{{$value->id}}</td>
+                                    <td>{{$value->construction_name}}</td>
+                                    <td>{{$value->license_num}}</td>
+                                    <td>{{$value->license_date}}</td>
+                                    <td>{{$value->license_by}}</td>
+                                    <td>{{$value->investor}}</td>
+                                    <td>{{$value['relationsDistrict']->name}}</td>
+                                    <td>{{$value['relationsCommune']->name}}</td>
+                                    <td>{{$value->lat_dams}}</td>
+                                    <td>{{$value->long_dams}}</td>
+                                    <td>{{$value->lat_factory}}</td>
+                                    <td>{{$value->long_factory}}</td>
+                                    <td>{{$value->water_source}}</td>
+                                    <td>{{$value->extraction_mode}}</td>
+                                    <td>{{$value->wattage}}</td>
+                                    <td>{{$value->max_flow}}</td>
+                                    <td>{{$value->q_tt}}</td>
+                                    <td>{{$value->extraction_method}}</td>
+                                    <td>{{$value->license_duration}}</td>
 
                                     <td>
-                                        <a href="{{route('cities.edit',['id' => $ci->id])}}"
+                                        <a href="{{route('licensing.edit',['id' => $value->id])}}"
                                            class="btn btn-action label label-success"><i
                                                     class="fa fa-pencil"></i></a>
 
-                                        <a href="{{route('cities.delete',['id' => $ci->id])}}"
+                                        <a href="{{route('licensing.delete',['id' => $value->id])}}"
                                            onclick="return confirm('Bạn có chắc muốn xóa')"
                                            class="btn btn-action label label-danger"><i
                                                     class="fa fa-trash"></i></a>

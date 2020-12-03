@@ -56,7 +56,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Loại (<span class="required">*</span>)</label>
-                                <select class="form-control select2 level" name="level">
+                                <select class="form-control select2 level" name="level" style="width: 100%;">
                                     <option value="">Lựa chọn</option>
                                     <option value="1" @if(old('level') == 1) selected @endif >Huyện</option>
                                     <option value="2" @if(old('level') == 2) selected @endif >Xã</option>
@@ -70,7 +70,7 @@
                             <div class="form-group">
                                 <label>Trực thuộc (<span class="required">*</span>)</label>
                                 <select class="form-control select2 parent_code"
-                                        name="parent_code" disabled>
+                                        name="parent_code" style="width: 100%;" disabled>
                                     <option value="">Lựa chọn</option>
                                     @foreach($listCity as $item)
                                         <option value="{{$item->code}}">{{$item->name}}</option>
