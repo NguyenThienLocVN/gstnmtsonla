@@ -22,25 +22,25 @@
                 </div>
             </div>
             <div class="d-flex align-items-center my-2">
-                <div class="col-6 position-relative validate-input m-b-26">
+                <div class="col-6 position-relative validate-input m-b-26 font-13">
                     <select class="w-100" name="" id="dropdownlist-district">
                         <option value="" disabled selected>Chọn huyện ...</option>
                         @foreach($districts as $district)
-                            <option value="{{$district->id}}">{{$district->district_name}}</option>
+                            <option value="{{$district->code}}">{{$district->name}}</option>
                         @endforeach
                     </select>
                 </div>
-                <div class="col-6 position-relative validate-input m-b-26">
+                <div class="col-6 position-relative validate-input m-b-26 font-13">
                     <select class="w-100" name="" id="dropdownlist-commune">
                         <option value="" disabled selected>Chọn xã ...</option>
-                        <option value="">Chiềng Khay</option>
-                        <option value="">Nậm Giôn</option>
-                        <option value="">Tạ Bú</option>
+                        @foreach($communes as $commune)
+                            <option value="{{$commune->code}}">{{$commune->name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-between my-2">
-                <div class="col-12 position-relative validate-input m-b-26">
+                <div class="col-12 position-relative validate-input m-b-26 font-13">
                     <select class="w-100" name="" id="dropdownlist-construction">
                         <option value="" disabled selected>Chọn công trình..</option>
                         @foreach($constructions as $construction)
