@@ -1,5 +1,5 @@
 @extends('admin.layout.index')
-@section('page_title','Thêm mới')
+@section('page_title','Thêm mới đơn vị hành chính')
 @section('link_css')
     <link rel="stylesheet" href="{{asset('public/admin/bower_components/select2/dist/css/select2.min.css')}}">
 @endsection
