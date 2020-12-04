@@ -67,7 +67,7 @@
                                     <td>{{$value->license_by}}</td>
                                     <td>{{$value->investor}}</td>
                                     <td>{{(isset($value['relationsDistrict']->name)) ? $value['relationsDistrict']->name : ""}}</td>
-                                    <td>{{(isset($value['relationsDistrict']->name)) ? $value['relationsDistrict']->name : ""}}</td>
+                                    <td>{{(isset($value['relationsCommune']->name)) ? $value['relationsCommune']->name : ""}}</td>
                                     <td>{{$value->extraction_mode}}</td>
                                     <td>{{$value->wattage}}</td>
                                     <td>{{$value->max_flow}}</td>
