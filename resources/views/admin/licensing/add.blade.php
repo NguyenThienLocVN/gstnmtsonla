@@ -302,7 +302,7 @@
                 $('#commune_code').empty();
                 // AJAX request load construction when select district
                 $.ajax({
-                    url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+e.params.data.id,
+                    url: window.location.origin+'/tai-nguyen-nuoc/district/'+e.params.data.id,
                     type: 'get',
                     dataType: 'json',
                     beforeSend: function(){
@@ -312,7 +312,7 @@
                     success: function(response){
                         $("#loading-gif-image").hide();
                         $("#overlay").hide();
-                        
+
                         // Load communes
                         var defaultCommuneOption = "<option value='' >Chọn xã..</option>";
                         $("#commune_code").append(defaultCommuneOption);
