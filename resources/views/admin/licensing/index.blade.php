@@ -40,9 +40,21 @@
                         <table id="data_table" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                @foreach($columns as $column)
-                                    <th class="text-center">{{$column}}</th>
-                                @endforeach
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Tên công trình</th>
+                                <th class="text-center">Số GP</th>
+                                <th class="text-center">Ngày cấp</th>
+                                <th class="text-center">Đơn vị cấp</th>
+                                <th class="text-center">Chủ đầu tư</th>
+                                <th class="text-center">Huyện</th>
+                                <th class="text-center">Xã</th>
+                                <th class="text-center">Chế độ khai thác</th>
+                                <th class="text-center">Công suất</th>
+                                <th class="text-center">Q<sub>max</sub></th>
+                                <th class="text-center">Q<sub>TT</sub></th>
+                                <th class="text-center">Phương thức khai thác</th>
+                                <th class="text-center">Thời hạn</th>
+                                <th class="text-center">Hành động</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -56,11 +68,6 @@
                                     <td>{{$value->investor}}</td>
                                     <td>{{$value['relationsDistrict']->name}}</td>
                                     <td>{{$value['relationsCommune']->name}}</td>
-                                    <td>{{$value->lat_dams}}</td>
-                                    <td>{{$value->long_dams}}</td>
-                                    <td>{{$value->lat_factory}}</td>
-                                    <td>{{$value->long_factory}}</td>
-                                    <td>{{$value->water_source}}</td>
                                     <td>{{$value->extraction_mode}}</td>
                                     <td>{{$value->wattage}}</td>
                                     <td>{{$value->max_flow}}</td>
@@ -82,13 +89,6 @@
                                 </tr>
                             @endforeach
                             </tbody>
-                            <tfoot>
-                            <tr>
-                                @foreach($columns as $column)
-                                    <th class="text-center">{{$column}}</th>
-                                @endforeach
-                            </tr>
-                            </tfoot>
                         </table>
                     </div>
                     <!-- /.box-body -->
