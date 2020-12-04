@@ -28,6 +28,8 @@
         <form action="" method="POST" role="form" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="box box-danger">
+            <img src="{{ asset('public/images/loading.gif') }}" id="loading-gif-image" class="loading-gif position-absolute" alt="loading" style="display: none;">
+            <div id="overlay"></div>
                 <div class="box-header">
                     <h3 class="box-title">Thêm mới</h3>
                 </div>
@@ -140,7 +142,7 @@
                                 <select name="district_code" id="district_code" class="form-control">
                                     <option value="" disabled selected>Chọn huyện ...</option>
                                     @foreach($districts as $district)
-                                        <option value="{{$district->code}}">{{$district->name}}</option>
+                                        <option value="{{$district->code}}" {{(old('district_code') == $district->code) ? "selected" : ""}}>{{$district->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -156,7 +158,7 @@
                                 <select name="commune_code" id="commune_code" class="form-control">
                                     <option value="" disabled selected>Chọn xã ...</option>
                                     @foreach($communes as $commune)
-                                        <option value="{{$commune->code}}">{{$commune->name}}</option>
+                                        <option value="{{$commune->code}}" {{(old('commune_code') == $commune->code) ? "selected" : ""}}>{{$commune->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -296,6 +298,33 @@
         $(function () {
             //Initialize Select2 Elements
             $('#district_code').select2();
+            $('#district_code').on('select2:select',function(e){
+                $('#commune_code').empty();
+                // AJAX request load construction when select district
+                $.ajax({
+                    url: window.location.origin+'/gstnmtsonla/tai-nguyen-nuoc/district/'+e.params.data.id,
+                    type: 'get',
+                    dataType: 'json',
+                    beforeSend: function(){
+                        $("#loading-gif-image").show();
+                        $("#overlay").show();
+                    },
+                    success: function(response){
+                        $("#loading-gif-image").hide();
+                        $("#overlay").hide();
+                        
+                        // Load communes
+                        var defaultCommuneOption = "<option value='' >Chọn xã..</option>";
+                        $("#commune_code").append(defaultCommuneOption);
+                        for(var i=0; i < response.communes.length; i++)
+                        {
+                            var option = "<option value='"+response.communes[i].code+"'>"+response.communes[i].name+"</option>";
+                            $("#commune_code").append(option);
+                        }
+                    }
+                }); 
+            })
+
             $('#commune_code').select2();
             $("#license_date").datepicker();
             $("#license_date").datepicker( "option", "dateFormat", "dd/mm/yy");
